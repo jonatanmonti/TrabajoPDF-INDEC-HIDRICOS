@@ -42,7 +42,15 @@ namespace TrabajoPDF_INDEC
 
         private void buttontxt_Click(object sender, EventArgs e)
         {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
 
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                if (File.Exists(saveFileDialog.FileName))
+                {
+
+                }
+            }
 
             buttonContinuar.Enabled = true;
         }
