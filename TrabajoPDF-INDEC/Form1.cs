@@ -36,13 +36,15 @@ namespace TrabajoPDF_INDEC
 
             textBoxRuta.Text = r.RutaArchivo;
 
-            buttonContinuar.Enabled = true;
+            
             buttontxt.Enabled = true;
         }
 
         private void buttontxt_Click(object sender, EventArgs e)
         {
-            
+
+
+            buttonContinuar.Enabled = true;
         }
 
         private void buttonContinuar_Click(object sender, EventArgs e)
