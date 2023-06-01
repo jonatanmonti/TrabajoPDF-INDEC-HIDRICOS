@@ -59,7 +59,7 @@ namespace TrabajoPDF_INDEC
 
                 if (r.PrimeraPagina == i && r.UltimaPagina >= i)
                 {
-                    var page = pdfDocument.GetPage(i);
+                    var page = pdfDocument.GetPage(r.PrimeraPagina++);
                     r.Text = PdfTextExtractor.GetTextFromPage(page);
                     file.Write(r.Text);
                     Debug.WriteLine(r.Text);
