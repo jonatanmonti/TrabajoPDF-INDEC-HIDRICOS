@@ -40,6 +40,8 @@ namespace TrabajoPDF_INDEC
             buttontxt.Enabled = true;
         }
 
+        string archivo;
+
         private void buttontxt_Click(object sender, EventArgs e)
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
@@ -50,6 +52,8 @@ namespace TrabajoPDF_INDEC
                 {
 
                 }
+
+                archivo = saveFileDialog.FileName;
             }
 
             buttonContinuar.Enabled = true;
@@ -60,7 +64,7 @@ namespace TrabajoPDF_INDEC
             var pdfDocument = new PdfDocument(new PdfReader(textBoxRuta.Text));
             var strategy = new LocationTextExtractionStrategy();
             string text = string.Empty;
-            StreamWriter file = new StreamWriter("C://Users//jonat//OneDrive//Escritorio//pdf.txt", true);
+            StreamWriter file = new StreamWriter(archivo, true);
             for (int i = 1; i <= pdfDocument.GetNumberOfPages(); i++)
             {
                 var page = pdfDocument.GetPage(i);
