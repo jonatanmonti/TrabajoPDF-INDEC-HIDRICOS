@@ -36,25 +36,14 @@ namespace TrabajoPDF_INDEC
 
             textBoxRuta.Text = r.RutaArchivo;
 
+            buttonPrimeraPagina.Enabled = true;
             
-            buttontxt.Enabled = true;
         }
-
-        string archivo;
+        
 
         private void buttontxt_Click(object sender, EventArgs e)
         {
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-
-            if (saveFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                if (File.Exists(saveFileDialog.FileName))
-                {
-
-                }
-
-                archivo = saveFileDialog.FileName;
-            }
+            r.GuardarArchivoTXT();
 
             buttonContinuar.Enabled = true;
         }
@@ -63,18 +52,36 @@ namespace TrabajoPDF_INDEC
         {
             var pdfDocument = new PdfDocument(new PdfReader(textBoxRuta.Text));
             var strategy = new LocationTextExtractionStrategy();
-            string text = string.Empty;
-            StreamWriter file = new StreamWriter(archivo, true);
+            r.Text = string.Empty;
+            StreamWriter file = new StreamWriter(r.Archivo, true);
             for (int i = 1; i <= pdfDocument.GetNumberOfPages(); i++)
             {
-                var page = pdfDocument.GetPage(i);
-                text = PdfTextExtractor.GetTextFromPage(page);
-                file.Write(text);
-                Debug.WriteLine(text);
+
+                if (r.PrimeraPagina == i && r.UltimaPagina >= i)
+                {
+                    var page = pdfDocument.GetPage(i);
+                    r.Text = PdfTextExtractor.GetTextFromPage(page);
+                    file.Write(r.Text);
+                    Debug.WriteLine(r.Text);
+
+                }
+                
             }
 
             file.Close();
             file.Dispose();
+        }
+
+        private void buttonPrimeraPagina_Click(object sender, EventArgs e)
+        {
+            r.PrimeraPagina = int.Parse(maskedTextBoxPrimeraPagina.Text);
+            buttonUltimaPagina.Enabled = true;
+        }
+
+        private void buttonUltimaPagina_Click(object sender, EventArgs e)
+        {
+            r.UltimaPagina = int.Parse(maskedTextBoxUltimaPagina.Text);
+            buttontxt.Enabled = true;
         }
     }
 }
