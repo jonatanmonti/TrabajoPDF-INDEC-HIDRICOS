@@ -20,6 +20,8 @@ namespace TrabajoPDF_INDEC
 
         public RutaPDF r = new RutaPDF();
 
+        public RutaTXT rt = new RutaTXT();
+
         public Form1()
         {
             InitializeComponent();
@@ -43,7 +45,7 @@ namespace TrabajoPDF_INDEC
 
         private void buttontxt_Click(object sender, EventArgs e)
         {
-            r.GuardarArchivoTXT();
+            rt.GuardarArchivoTXT();
 
             buttonContinuar.Enabled = true;
         }
@@ -53,7 +55,7 @@ namespace TrabajoPDF_INDEC
             var pdfDocument = new PdfDocument(new PdfReader(textBoxRuta.Text));
             var strategy = new LocationTextExtractionStrategy();
             r.Text = string.Empty;
-            StreamWriter file = new StreamWriter(r.Archivo, true);
+            StreamWriter file = new StreamWriter(rt.Archivo, true);
             for (int i = 1; i <= pdfDocument.GetNumberOfPages(); i++)
             {
 
@@ -70,6 +72,7 @@ namespace TrabajoPDF_INDEC
 
             file.Close();
             file.Dispose();
+
         }
 
         private void buttonPrimeraPagina_Click(object sender, EventArgs e)
@@ -82,6 +85,70 @@ namespace TrabajoPDF_INDEC
         {
             r.UltimaPagina = int.Parse(maskedTextBoxUltimaPagina.Text);
             buttontxt.Enabled = true;
+        }
+
+        private void buttonPruebas_Click(object sender, EventArgs e)
+        {
+            StreamReader LeerLineas = File.OpenText(textBoxRutaTXT.Text);
+
+            while (!LeerLineas.EndOfStream)
+            {
+                rt.Linea = LeerLineas.ReadLine();
+                if (++rt.NumeroLinea == 27)
+                {
+                    Debug.WriteLine(rt.Linea);
+                    break;
+                    
+                }
+            }
+
+            while (!LeerLineas.EndOfStream)
+            {
+                rt.Linea = LeerLineas.ReadLine();
+                if (++rt.NumeroLinea == 40)
+                {
+                    Debug.WriteLine(rt.Linea);
+                    break;
+                }
+            }
+
+            while (!LeerLineas.EndOfStream)
+            {
+                rt.Linea = LeerLineas.ReadLine();
+                if (++rt.NumeroLinea == 591)
+                {
+                    Debug.WriteLine(rt.Linea);
+                    break;
+                }
+            }
+
+            while (!LeerLineas.EndOfStream)
+            {
+                rt.Linea = LeerLineas.ReadLine();
+                if (++rt.NumeroLinea == 614)
+                {
+                    Debug.WriteLine(rt.Linea);
+                    break;
+                }
+            }
+
+            while (!LeerLineas.EndOfStream)
+            {
+                rt.Linea = LeerLineas.ReadLine();
+                if (++rt.NumeroLinea == 620)
+                {
+                    Debug.WriteLine(rt.Linea);
+                    break;
+                }
+            }
+
+        }
+
+        private void buttonRutaTXT_Click(object sender, EventArgs e)
+        {
+            rt.ObtenerRutaTXT();
+
+            textBoxRutaTXT.Text = rt.RutaArchivoTXT;
         }
     }
 }

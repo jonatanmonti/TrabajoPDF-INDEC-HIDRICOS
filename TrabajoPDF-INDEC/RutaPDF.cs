@@ -34,13 +34,6 @@ namespace TrabajoPDF_INDEC
             set { ultimaPagina = value; }
         }
 
-        private string archivo;
-
-        public string Archivo
-        {
-            get { return archivo; }
-            set { archivo = value; }
-        }
 
         private string text;
 
@@ -61,24 +54,6 @@ namespace TrabajoPDF_INDEC
             }
 
             return rutaArchivo;
-        }
-
-        public string GuardarArchivoTXT()
-        {
-
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-
-
-            if (saveFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                if (File.Exists(saveFileDialog.FileName))
-                {
-
-                }
-
-                archivo = saveFileDialog.FileName;
-            }
-            return archivo;
         }
 
     }
