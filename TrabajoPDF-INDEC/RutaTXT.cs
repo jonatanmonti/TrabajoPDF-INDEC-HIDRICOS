@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.IO;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace TrabajoPDF_INDEC
 {
@@ -43,8 +44,6 @@ namespace TrabajoPDF_INDEC
             set { numeroLinea = value; }
         }
 
-        
-
         public string GuardarArchivoTXT()
         {
 
@@ -74,8 +73,6 @@ namespace TrabajoPDF_INDEC
 
             return rutaArchivoTXT;
         }
-
-        
 
     }
 }

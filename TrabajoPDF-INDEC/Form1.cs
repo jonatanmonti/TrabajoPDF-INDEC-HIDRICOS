@@ -186,8 +186,10 @@ namespace TrabajoPDF_INDEC
 
         private void buttonPruebas_Click(object sender, EventArgs e)
         {
-            StreamReader LeerLineas = File.OpenText(textBoxRutaTXT.Text);
+
             
+            StreamReader LeerLineas = File.OpenText(textBoxRutaTXT.Text);
+
             if (cuadro == 1)
             {
                 while (!LeerLineas.EndOfStream)
