@@ -42,6 +42,8 @@
             this.textBoxRutaTXT = new System.Windows.Forms.TextBox();
             this.labelRutaTXT = new System.Windows.Forms.Label();
             this.buttonRutaTXT = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // labelTitulo
@@ -71,7 +73,7 @@
             this.textBoxRuta.Location = new System.Drawing.Point(264, 49);
             this.textBoxRuta.Name = "textBoxRuta";
             this.textBoxRuta.ReadOnly = true;
-            this.textBoxRuta.Size = new System.Drawing.Size(579, 26);
+            this.textBoxRuta.Size = new System.Drawing.Size(479, 26);
             this.textBoxRuta.TabIndex = 5;
             // 
             // buttonRutaPDF
@@ -79,7 +81,7 @@
             this.buttonRutaPDF.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonRutaPDF.Location = new System.Drawing.Point(12, 92);
             this.buttonRutaPDF.Name = "buttonRutaPDF";
-            this.buttonRutaPDF.Size = new System.Drawing.Size(831, 53);
+            this.buttonRutaPDF.Size = new System.Drawing.Size(731, 53);
             this.buttonRutaPDF.TabIndex = 7;
             this.buttonRutaPDF.Text = "Buscar PDF";
             this.buttonRutaPDF.UseVisualStyleBackColor = true;
@@ -89,11 +91,11 @@
             // 
             this.buttontxt.Enabled = false;
             this.buttontxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttontxt.Location = new System.Drawing.Point(12, 269);
+            this.buttontxt.Location = new System.Drawing.Point(12, 357);
             this.buttontxt.Name = "buttontxt";
-            this.buttontxt.Size = new System.Drawing.Size(831, 53);
+            this.buttontxt.Size = new System.Drawing.Size(731, 53);
             this.buttontxt.TabIndex = 8;
-            this.buttontxt.Text = "Guardar archivo txt";
+            this.buttontxt.Text = "Cuadro 1 ruta txt";
             this.buttontxt.UseVisualStyleBackColor = true;
             this.buttontxt.Click += new System.EventHandler(this.buttontxt_Click);
             // 
@@ -101,11 +103,11 @@
             // 
             this.buttonContinuar.Enabled = false;
             this.buttonContinuar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonContinuar.Location = new System.Drawing.Point(12, 328);
+            this.buttonContinuar.Location = new System.Drawing.Point(12, 416);
             this.buttonContinuar.Name = "buttonContinuar";
-            this.buttonContinuar.Size = new System.Drawing.Size(831, 53);
+            this.buttonContinuar.Size = new System.Drawing.Size(731, 53);
             this.buttonContinuar.TabIndex = 9;
-            this.buttonContinuar.Text = "Continuar";
+            this.buttonContinuar.Text = "Cuadro 1 crear txt";
             this.buttonContinuar.UseVisualStyleBackColor = true;
             this.buttonContinuar.Click += new System.EventHandler(this.buttonContinuar_Click);
             // 
@@ -117,7 +119,7 @@
             this.buttonPrimeraPagina.Name = "buttonPrimeraPagina";
             this.buttonPrimeraPagina.Size = new System.Drawing.Size(263, 53);
             this.buttonPrimeraPagina.TabIndex = 10;
-            this.buttonPrimeraPagina.Text = "Primera pagina a analizar";
+            this.buttonPrimeraPagina.Text = "Cuadro 1 Inicio";
             this.buttonPrimeraPagina.UseVisualStyleBackColor = true;
             this.buttonPrimeraPagina.Click += new System.EventHandler(this.buttonPrimeraPagina_Click);
             // 
@@ -129,7 +131,7 @@
             this.buttonUltimaPagina.Name = "buttonUltimaPagina";
             this.buttonUltimaPagina.Size = new System.Drawing.Size(263, 53);
             this.buttonUltimaPagina.TabIndex = 11;
-            this.buttonUltimaPagina.Text = "Ultima pagina a analizar";
+            this.buttonUltimaPagina.Text = "Cuadro 1 Fin";
             this.buttonUltimaPagina.UseVisualStyleBackColor = true;
             this.buttonUltimaPagina.Click += new System.EventHandler(this.buttonUltimaPagina_Click);
             // 
@@ -154,7 +156,7 @@
             this.buttonPruebas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonPruebas.Location = new System.Drawing.Point(554, 151);
             this.buttonPruebas.Name = "buttonPruebas";
-            this.buttonPruebas.Size = new System.Drawing.Size(289, 53);
+            this.buttonPruebas.Size = new System.Drawing.Size(189, 53);
             this.buttonPruebas.TabIndex = 14;
             this.buttonPruebas.Text = "pruebas";
             this.buttonPruebas.UseVisualStyleBackColor = true;
@@ -163,17 +165,17 @@
             // textBoxRutaTXT
             // 
             this.textBoxRutaTXT.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxRutaTXT.Location = new System.Drawing.Point(264, 387);
+            this.textBoxRutaTXT.Location = new System.Drawing.Point(264, 473);
             this.textBoxRutaTXT.Name = "textBoxRutaTXT";
             this.textBoxRutaTXT.ReadOnly = true;
-            this.textBoxRutaTXT.Size = new System.Drawing.Size(579, 26);
+            this.textBoxRutaTXT.Size = new System.Drawing.Size(479, 26);
             this.textBoxRutaTXT.TabIndex = 15;
             // 
             // labelRutaTXT
             // 
             this.labelRutaTXT.AutoSize = true;
             this.labelRutaTXT.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelRutaTXT.Location = new System.Drawing.Point(31, 388);
+            this.labelRutaTXT.Location = new System.Drawing.Point(30, 472);
             this.labelRutaTXT.Name = "labelRutaTXT";
             this.labelRutaTXT.Size = new System.Drawing.Size(204, 25);
             this.labelRutaTXT.TabIndex = 16;
@@ -182,19 +184,30 @@
             // buttonRutaTXT
             // 
             this.buttonRutaTXT.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonRutaTXT.Location = new System.Drawing.Point(12, 416);
+            this.buttonRutaTXT.Location = new System.Drawing.Point(12, 505);
             this.buttonRutaTXT.Name = "buttonRutaTXT";
-            this.buttonRutaTXT.Size = new System.Drawing.Size(831, 53);
+            this.buttonRutaTXT.Size = new System.Drawing.Size(731, 53);
             this.buttonRutaTXT.TabIndex = 17;
             this.buttonRutaTXT.Text = "Buscar TXT";
             this.buttonRutaTXT.UseVisualStyleBackColor = true;
             this.buttonRutaTXT.Click += new System.EventHandler(this.buttonRutaTXT_Click);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(762, 48);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(493, 297);
+            this.dataGridView1.TabIndex = 18;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(857, 484);
+            this.ClientSize = new System.Drawing.Size(1267, 597);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.buttonRutaTXT);
             this.Controls.Add(this.labelRutaTXT);
             this.Controls.Add(this.textBoxRutaTXT);
@@ -212,6 +225,7 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -233,6 +247,7 @@
         private System.Windows.Forms.TextBox textBoxRutaTXT;
         private System.Windows.Forms.Label labelRutaTXT;
         private System.Windows.Forms.Button buttonRutaTXT;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
 

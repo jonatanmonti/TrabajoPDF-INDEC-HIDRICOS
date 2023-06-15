@@ -22,6 +22,8 @@ namespace TrabajoPDF_INDEC
 
         public RutaTXT rt = new RutaTXT();
 
+        int contador = 0; int cuadro = 0;
+
         public Form1()
         {
             InitializeComponent();
@@ -45,12 +47,26 @@ namespace TrabajoPDF_INDEC
 
         private void buttontxt_Click(object sender, EventArgs e)
         {
-            rt.GuardarArchivoTXT();
+            if (contador == 0)
+            {
+                rt.GuardarArchivoTXT();
+                buttonContinuar.Enabled = true;
 
-            buttonContinuar.Enabled = true;
+                buttontxt.Text = "Cuadro 5 guardar txt";
+                buttontxt.Enabled = false;
+            }else if (contador == 1)
+            {
+                rt.GuardarArchivoTXT();
+                buttonContinuar.Enabled = true;
+
+                buttontxt.Text = "Cuadro 4 guardar txt";
+                buttontxt.Enabled = false;
+            }
+
+            
         }
 
-        private void buttonContinuar_Click(object sender, EventArgs e)
+        public void FuncionBotonContinuar()
         {
             var pdfDocument = new PdfDocument(new PdfReader(textBoxRuta.Text));
             var strategy = new LocationTextExtractionStrategy();
@@ -67,78 +83,144 @@ namespace TrabajoPDF_INDEC
                     Debug.WriteLine(r.Text);
 
                 }
-                
+
             }
 
             file.Close();
             file.Dispose();
+        }
+
+        private void buttonContinuar_Click(object sender, EventArgs e)
+        {
+
+            if (contador == 0)
+            {
+                FuncionBotonContinuar();
+
+                buttonContinuar.Text = "Cuadro 5 crear txt";
+                buttonContinuar.Enabled = false;
+
+                contador++;
+
+                buttonPrimeraPagina.Enabled = true;
+            }else if (contador == 1)
+            {
+                FuncionBotonContinuar();
+
+                buttonContinuar.Text = "Cuadro 4 crear txt";
+                buttonContinuar.Enabled = false;
+
+                contador++;
+
+                buttonPrimeraPagina.Enabled = true;
+            }
+
+            
 
         }
 
         private void buttonPrimeraPagina_Click(object sender, EventArgs e)
         {
-            r.PrimeraPagina = int.Parse(maskedTextBoxPrimeraPagina.Text);
-            buttonUltimaPagina.Enabled = true;
+            
+
+            if(contador == 0)
+            {
+                r.PrimeraPagina = int.Parse(maskedTextBoxPrimeraPagina.Text);
+                buttonUltimaPagina.Enabled = true;
+
+                buttonPrimeraPagina.Text = "Cuadro 5 Inicio";
+                buttonPrimeraPagina.Enabled = false;
+            }else if(contador == 1)
+            {
+                r.PrimeraPagina = int.Parse(maskedTextBoxPrimeraPagina.Text);
+                buttonUltimaPagina.Enabled = true;
+
+                buttonPrimeraPagina.Text = "Cuadro 4 Inicio";
+                buttonPrimeraPagina.Enabled = false;
+            }
         }
 
         private void buttonUltimaPagina_Click(object sender, EventArgs e)
         {
-            r.UltimaPagina = int.Parse(maskedTextBoxUltimaPagina.Text);
-            buttontxt.Enabled = true;
+
+            if(contador == 0)
+            {
+                r.UltimaPagina = int.Parse(maskedTextBoxUltimaPagina.Text);
+                buttontxt.Enabled = true;
+
+                buttonUltimaPagina.Text = "Cuadro 5 Fin";
+                buttonUltimaPagina.Enabled = false;
+            }else if (contador == 1)
+            {
+                r.UltimaPagina = int.Parse(maskedTextBoxUltimaPagina.Text);
+                buttontxt.Enabled = true;
+
+                buttonUltimaPagina.Text = "Cuadro 4 Fin";
+                buttonUltimaPagina.Enabled = false;
+            }
+            
         }
 
         private void buttonPruebas_Click(object sender, EventArgs e)
         {
             StreamReader LeerLineas = File.OpenText(textBoxRutaTXT.Text);
-
-            while (!LeerLineas.EndOfStream)
+            
+            if (cuadro == 1)
             {
-                rt.Linea = LeerLineas.ReadLine();
-                if (++rt.NumeroLinea == 27)
+                while (!LeerLineas.EndOfStream)
                 {
-                    Debug.WriteLine(rt.Linea);
-                    break;
-                    
+                    rt.Linea = LeerLineas.ReadLine();
+                    if (++rt.NumeroLinea == 27)
+                    {
+                        Debug.WriteLine(rt.Linea);
+                        break;
+
+                    }
                 }
-            }
 
-            while (!LeerLineas.EndOfStream)
-            {
-                rt.Linea = LeerLineas.ReadLine();
-                if (++rt.NumeroLinea == 40)
+                while (!LeerLineas.EndOfStream)
                 {
-                    Debug.WriteLine(rt.Linea);
-                    break;
+                    rt.Linea = LeerLineas.ReadLine();
+                    if (++rt.NumeroLinea == 40)
+                    {
+                        Debug.WriteLine(rt.Linea);
+                        break;
+                    }
                 }
-            }
 
-            while (!LeerLineas.EndOfStream)
+                rt.NumeroLinea = 0;
+            }
+            
+            if (cuadro == 2)
             {
-                rt.Linea = LeerLineas.ReadLine();
-                if (++rt.NumeroLinea == 591)
+                while (!LeerLineas.EndOfStream)
                 {
-                    Debug.WriteLine(rt.Linea);
-                    break;
+                    rt.Linea = LeerLineas.ReadLine();
+                    if (++rt.NumeroLinea == 16)
+                    {
+                        Debug.WriteLine(rt.Linea);
+                        break;
+                    }
                 }
-            }
 
-            while (!LeerLineas.EndOfStream)
-            {
-                rt.Linea = LeerLineas.ReadLine();
-                if (++rt.NumeroLinea == 614)
+                while (!LeerLineas.EndOfStream)
                 {
-                    Debug.WriteLine(rt.Linea);
-                    break;
+                    rt.Linea = LeerLineas.ReadLine();
+                    if (++rt.NumeroLinea == 39)
+                    {
+                        Debug.WriteLine(rt.Linea);
+                        break;
+                    }
                 }
-            }
 
-            while (!LeerLineas.EndOfStream)
-            {
-                rt.Linea = LeerLineas.ReadLine();
-                if (++rt.NumeroLinea == 620)
+                while (!LeerLineas.EndOfStream)
                 {
-                    Debug.WriteLine(rt.Linea);
-                    break;
+                    rt.Linea = LeerLineas.ReadLine();
+                    if (++rt.NumeroLinea == 45)
+                    {
+                        Debug.WriteLine(rt.Linea);
+                        break;
+                    }
                 }
             }
 
@@ -149,6 +231,8 @@ namespace TrabajoPDF_INDEC
             rt.ObtenerRutaTXT();
 
             textBoxRutaTXT.Text = rt.RutaArchivoTXT;
+
+            cuadro++;
         }
     }
 }
