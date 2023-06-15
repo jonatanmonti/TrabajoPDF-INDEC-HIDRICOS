@@ -61,6 +61,11 @@ namespace TrabajoPDF_INDEC
 
                 buttontxt.Text = "Cuadro 4 guardar txt";
                 buttontxt.Enabled = false;
+            }else if (contador == 2)
+            {
+                rt.GuardarArchivoTXT();
+                buttonContinuar.Enabled = true;
+                buttontxt.Enabled = false;
             }
 
             
@@ -113,6 +118,12 @@ namespace TrabajoPDF_INDEC
                 contador++;
 
                 buttonPrimeraPagina.Enabled = true;
+            }else if (contador == 2)
+            {
+                FuncionBotonContinuar();
+                buttonContinuar.Enabled = false;
+                buttonPrimeraPagina.Enabled = true;
+
             }
 
             
@@ -138,6 +149,12 @@ namespace TrabajoPDF_INDEC
                 buttonPrimeraPagina.Text = "Cuadro 4 Inicio";
                 buttonPrimeraPagina.Enabled = false;
             }
+            else if(contador == 2)
+            {
+                r.PrimeraPagina = int.Parse(maskedTextBoxPrimeraPagina.Text);
+                buttonUltimaPagina.Enabled = true;
+                buttonPrimeraPagina.Enabled = false;
+            }
         }
 
         private void buttonUltimaPagina_Click(object sender, EventArgs e)
@@ -156,6 +173,12 @@ namespace TrabajoPDF_INDEC
                 buttontxt.Enabled = true;
 
                 buttonUltimaPagina.Text = "Cuadro 4 Fin";
+                buttonUltimaPagina.Enabled = false;
+            }
+            else if(contador == 2)
+            {
+                r.UltimaPagina = int.Parse(maskedTextBoxUltimaPagina.Text);
+                buttontxt.Enabled = true;
                 buttonUltimaPagina.Enabled = false;
             }
             
