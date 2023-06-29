@@ -240,6 +240,7 @@ namespace TrabajoPDF_INDEC
                 {
                     rt.Linea = LeerLineas.ReadLine();
                     string[] trozos = rt.Linea.Split(' ');
+                    trozos = trozos.ToList().Where(x=> !string.IsNullOrEmpty(x)).ToArray();
                     int i = 0;
                     if (++rt.NumeroLinea == 16)
                     {
@@ -259,6 +260,7 @@ namespace TrabajoPDF_INDEC
                 {
                     rt.Linea = LeerLineas.ReadLine();
                     string[] trozos = rt.Linea.Split(' ');
+                    trozos = trozos.ToList().Where(x => !string.IsNullOrEmpty(x)).ToArray();
                     int i = 0;
                     if (++rt.NumeroLinea == 39)
                     {
@@ -278,6 +280,7 @@ namespace TrabajoPDF_INDEC
                 {
                     rt.Linea = LeerLineas.ReadLine();
                     string[] trozos = rt.Linea.Split(' ');
+                    trozos = trozos.ToList().Where(x => !string.IsNullOrEmpty(x)).ToArray();
                     int i = 0;
                     if (++rt.NumeroLinea == 45)
                     {
