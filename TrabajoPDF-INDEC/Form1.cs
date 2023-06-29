@@ -184,6 +184,20 @@ namespace TrabajoPDF_INDEC
             
         }
 
+        private void Parsear()
+        {
+            string[] trozos = rt.Linea.Split(' ');
+            trozos = trozos.ToList().Where(x => !string.IsNullOrEmpty(x)).ToArray();
+            int i = 0;
+            Debug.WriteLine(rt.Linea);
+
+            while (i < trozos.Length)
+            {
+                Debug.WriteLine("[" + trozos[i] + "]");
+                i++;
+            }
+        }
+
         private void buttonPruebas_Click(object sender, EventArgs e)
         {
 
@@ -195,17 +209,10 @@ namespace TrabajoPDF_INDEC
                 while (!LeerLineas.EndOfStream)
                 {
                     rt.Linea = LeerLineas.ReadLine();
-                    string[] trozos = rt.Linea.Split(' ');
-                    int i = 0;
+                    
                     if (++rt.NumeroLinea == 27)
                     {
-                        Debug.WriteLine(rt.Linea);
-
-                        while (i < trozos.Length)
-                        {
-                            Debug.WriteLine("[" + trozos[i] + "]");
-                            i++;
-                        }
+                        Parsear();
 
                         break;
 
@@ -215,17 +222,10 @@ namespace TrabajoPDF_INDEC
                 while (!LeerLineas.EndOfStream)
                 {
                     rt.Linea = LeerLineas.ReadLine();
-                    string[] trozos = rt.Linea.Split(' ');
-                    int i = 0;
+                    
                     if (++rt.NumeroLinea == 40)
                     {
-                        Debug.WriteLine(rt.Linea);
-
-                        while (i < trozos.Length)
-                        {
-                            Debug.WriteLine("[" + trozos[i] + "]");
-                            i++;
-                        }
+                        Parsear();
 
                         break;
                     }
@@ -239,18 +239,10 @@ namespace TrabajoPDF_INDEC
                 while (!LeerLineas.EndOfStream)
                 {
                     rt.Linea = LeerLineas.ReadLine();
-                    string[] trozos = rt.Linea.Split(' ');
-                    trozos = trozos.ToList().Where(x=> !string.IsNullOrEmpty(x)).ToArray();
-                    int i = 0;
+                    
                     if (++rt.NumeroLinea == 16)
                     {
-                        Debug.WriteLine(rt.Linea);
-
-                        while (i < trozos.Length)
-                        {
-                            Debug.WriteLine("[" + trozos[i] + "]");
-                            i++;
-                        }
+                        Parsear();
 
                         break;
                     }
@@ -259,18 +251,10 @@ namespace TrabajoPDF_INDEC
                 while (!LeerLineas.EndOfStream)
                 {
                     rt.Linea = LeerLineas.ReadLine();
-                    string[] trozos = rt.Linea.Split(' ');
-                    trozos = trozos.ToList().Where(x => !string.IsNullOrEmpty(x)).ToArray();
-                    int i = 0;
+                    
                     if (++rt.NumeroLinea == 39)
                     {
-                        Debug.WriteLine(rt.Linea);
-
-                        while (i < trozos.Length)
-                        {
-                            Debug.WriteLine("[" + trozos[i] + "]");
-                            i++;
-                        }
+                        Parsear();
 
                         break;
                     }
@@ -279,18 +263,10 @@ namespace TrabajoPDF_INDEC
                 while (!LeerLineas.EndOfStream)
                 {
                     rt.Linea = LeerLineas.ReadLine();
-                    string[] trozos = rt.Linea.Split(' ');
-                    trozos = trozos.ToList().Where(x => !string.IsNullOrEmpty(x)).ToArray();
-                    int i = 0;
+                    
                     if (++rt.NumeroLinea == 45)
                     {
-                        Debug.WriteLine(rt.Linea);
-
-                        while (i < trozos.Length)
-                        {
-                            Debug.WriteLine("[" + trozos[i] + "]");
-                            i++;
-                        }
+                        Parsear();
 
                         break;
                     }
