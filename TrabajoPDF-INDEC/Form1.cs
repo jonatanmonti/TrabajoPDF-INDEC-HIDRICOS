@@ -279,7 +279,7 @@ namespace TrabajoPDF_INDEC
         {
             rt.ObtenerRutaTXT(); //funcion para obtener la ruta donde se encuentran guardados los archivos de texto
 
-            textBoxRutaTXT.Text = rt.RutaArchivoTXT; 
+            textBoxRutaTXT.Text = rt.RutaArchivoTXT; //guardamos la direccion de la ruta en el textbox
 
             cuadro++;
         }
