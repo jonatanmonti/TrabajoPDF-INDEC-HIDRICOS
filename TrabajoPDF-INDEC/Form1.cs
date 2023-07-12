@@ -34,11 +34,11 @@ namespace TrabajoPDF_INDEC
 
         }
 
-        private void buttonRutaPDF_Click(object sender, EventArgs e) //boton para buscar la ruta del pdf
+        private void buttonRutaPDF_Click(object sender, EventArgs e)
         {
-            r.ObtenerRuta(); //funcion para obtener la ruta
+            r.ObtenerRuta();
 
-            textBoxRuta.Text = r.RutaArchivo; //guardamos la direccion de la ruta en el textbox
+            textBoxRuta.Text = r.RutaArchivo;
 
             buttonPrimeraPagina.Enabled = true;
             
@@ -47,23 +47,23 @@ namespace TrabajoPDF_INDEC
 
         private void buttontxt_Click(object sender, EventArgs e)
         {
-            if (contador == 0) //if para validar que cuadro estamos guardando (empezando por el cuadro 1, siguiendo el 5 y por ultimo el 4)
+            if (contador == 0)
             {
-                rt.GuardarArchivoTXT(); //funcion para guardar el archivo de texto
+                rt.GuardarArchivoTXT();
                 buttonContinuar.Enabled = true;
 
                 buttontxt.Text = "Cuadro 5 guardar txt";
                 buttontxt.Enabled = false;
             }else if (contador == 1)
             {
-                rt.GuardarArchivoTXT(); //funcion para guardar el archivo de texto
+                rt.GuardarArchivoTXT();
                 buttonContinuar.Enabled = true;
 
                 buttontxt.Text = "Cuadro 4 guardar txt";
                 buttontxt.Enabled = false;
             }else if (contador == 2)
             {
-                rt.GuardarArchivoTXT(); //funcion para guardar el archivo de texto
+                rt.GuardarArchivoTXT();
                 buttonContinuar.Enabled = true;
                 buttontxt.Enabled = false;
             }
@@ -71,20 +71,20 @@ namespace TrabajoPDF_INDEC
             
         }
 
-        public void FuncionBotonContinuar() //funcion para obtener el contenido del pdf y escribirlo en archivos txt
+        public void FuncionBotonContinuar()
         {
             var pdfDocument = new PdfDocument(new PdfReader(textBoxRuta.Text));
             var strategy = new LocationTextExtractionStrategy();
             r.Text = string.Empty;
             StreamWriter file = new StreamWriter(rt.Archivo, true);
-            for (int i = 1; i <= pdfDocument.GetNumberOfPages(); i++) //for para obtener la cantidad de paginas
+            for (int i = 1; i <= pdfDocument.GetNumberOfPages(); i++)
             {
 
-                if (r.PrimeraPagina == i && r.UltimaPagina >= i) //if para obtener las paginas especificadas
+                if (r.PrimeraPagina == i && r.UltimaPagina >= i)
                 {
-                    var page = pdfDocument.GetPage(r.PrimeraPagina++); //obtiene el numero de pagina dentro del pdf
-                    r.Text = PdfTextExtractor.GetTextFromPage(page); //obtiene el texto dentro del pdf
-                    file.Write(r.Text); //escribe las lineas de codigo dentro de los archivos de texto
+                    var page = pdfDocument.GetPage(r.PrimeraPagina++);
+                    r.Text = PdfTextExtractor.GetTextFromPage(page);
+                    file.Write(r.Text);
                     Debug.WriteLine(r.Text);
 
                 }
@@ -98,9 +98,9 @@ namespace TrabajoPDF_INDEC
         private void buttonContinuar_Click(object sender, EventArgs e)
         {
 
-            if (contador == 0) //if para validar en que cuadro estamos
+            if (contador == 0)
             {
-                FuncionBotonContinuar(); //funcion para obtener el contenido del pdf y escribirlo en archivos txt
+                FuncionBotonContinuar();
 
                 buttonContinuar.Text = "Cuadro 5 crear txt";
                 buttonContinuar.Enabled = false;
@@ -110,7 +110,7 @@ namespace TrabajoPDF_INDEC
                 buttonPrimeraPagina.Enabled = true;
             }else if (contador == 1)
             {
-                FuncionBotonContinuar(); //funcion para obtener el contenido del pdf y escribirlo en archivos txt
+                FuncionBotonContinuar();
 
                 buttonContinuar.Text = "Cuadro 4 crear txt";
                 buttonContinuar.Enabled = false;
@@ -120,7 +120,7 @@ namespace TrabajoPDF_INDEC
                 buttonPrimeraPagina.Enabled = true;
             }else if (contador == 2)
             {
-                FuncionBotonContinuar(); //funcion para obtener el contenido del pdf y escribirlo en archivos txt
+                FuncionBotonContinuar();
                 buttonContinuar.Enabled = false;
                 buttonPrimeraPagina.Enabled = true;
 
@@ -136,14 +136,14 @@ namespace TrabajoPDF_INDEC
 
             if(contador == 0)
             {
-                r.PrimeraPagina = int.Parse(maskedTextBoxPrimeraPagina.Text); //le pedimos al usuario la pagina donde inicia el cuadro
+                r.PrimeraPagina = int.Parse(maskedTextBoxPrimeraPagina.Text);
                 buttonUltimaPagina.Enabled = true;
 
                 buttonPrimeraPagina.Text = "Cuadro 5 Inicio";
                 buttonPrimeraPagina.Enabled = false;
             }else if(contador == 1)
             {
-                r.PrimeraPagina = int.Parse(maskedTextBoxPrimeraPagina.Text); //le pedimos al usuario la pagina donde inicia el cuadro
+                r.PrimeraPagina = int.Parse(maskedTextBoxPrimeraPagina.Text);
                 buttonUltimaPagina.Enabled = true;
 
                 buttonPrimeraPagina.Text = "Cuadro 4 Inicio";
@@ -151,7 +151,7 @@ namespace TrabajoPDF_INDEC
             }
             else if(contador == 2)
             {
-                r.PrimeraPagina = int.Parse(maskedTextBoxPrimeraPagina.Text); //le pedimos al usuario la pagina donde inicia el cuadro
+                r.PrimeraPagina = int.Parse(maskedTextBoxPrimeraPagina.Text);
                 buttonUltimaPagina.Enabled = true;
                 buttonPrimeraPagina.Enabled = false;
             }
@@ -160,16 +160,16 @@ namespace TrabajoPDF_INDEC
         private void buttonUltimaPagina_Click(object sender, EventArgs e)
         {
 
-            if(contador == 0) //if para validar en que cuadro estamos
+            if(contador == 0)
             {
-                r.UltimaPagina = int.Parse(maskedTextBoxUltimaPagina.Text); //le pedimos al usuario la pagina donde finaliza el cuadro
+                r.UltimaPagina = int.Parse(maskedTextBoxUltimaPagina.Text);
                 buttontxt.Enabled = true;
 
                 buttonUltimaPagina.Text = "Cuadro 5 Fin";
                 buttonUltimaPagina.Enabled = false;
             }else if (contador == 1)
             {
-                r.UltimaPagina = int.Parse(maskedTextBoxUltimaPagina.Text); //le pedimos al usuario la pagina donde finaliza el cuadro
+                r.UltimaPagina = int.Parse(maskedTextBoxUltimaPagina.Text);
                 buttontxt.Enabled = true;
 
                 buttonUltimaPagina.Text = "Cuadro 4 Fin";
@@ -177,17 +177,17 @@ namespace TrabajoPDF_INDEC
             }
             else if(contador == 2)
             {
-                r.UltimaPagina = int.Parse(maskedTextBoxUltimaPagina.Text); //le pedimos al usuario la pagina donde finaliza el cuadro
+                r.UltimaPagina = int.Parse(maskedTextBoxUltimaPagina.Text);
                 buttontxt.Enabled = true;
                 buttonUltimaPagina.Enabled = false;
             }
             
         }
 
-        private void Parsear() //funcion para parsear los archivos de texto
+        private void Parsear()
         {
-            string[] trozos = rt.Linea.Split(' '); //asignamos que el separador es el espacio vacio
-            trozos = trozos.ToList().Where(x => !string.IsNullOrEmpty(x)).ToArray(); //esto sirve para indicar que todo espacio vacio extra no nos moleste
+            string[] trozos = rt.Linea.Split(' ');
+            trozos = trozos.ToList().Where(x => !string.IsNullOrEmpty(x)).ToArray();
             int i = 0;
             Debug.WriteLine(rt.Linea);
 
@@ -204,28 +204,28 @@ namespace TrabajoPDF_INDEC
             
             StreamReader LeerLineas = File.OpenText(textBoxRutaTXT.Text);
 
-            if (cuadro == 1) //if para validar en que cuadro estamos
+            if (cuadro == 1)
             {
-                while (!LeerLineas.EndOfStream) //while que recorre el cuadro por linea hasta el final del archivo
+                while (!LeerLineas.EndOfStream)
                 {
                     rt.Linea = LeerLineas.ReadLine();
                     
-                    if (++rt.NumeroLinea == 27) //if para obtener la linea especifica dentro del archivo de texto
+                    if (++rt.NumeroLinea == 27)
                     {
-                        Parsear(); //funcion para parsear los archivos de texto
+                        Parsear();
 
                         break;
 
                     }
                 }
 
-                while (!LeerLineas.EndOfStream) //while que recorre el cuadro por linea hasta el final del archivo
+                while (!LeerLineas.EndOfStream)
                 {
                     rt.Linea = LeerLineas.ReadLine();
                     
-                    if (++rt.NumeroLinea == 40) //if para obtener la linea especifica dentro del archivo de texto
+                    if (++rt.NumeroLinea == 40)
                     {
-                        Parsear(); //funcion para parsear los archivos de texto
+                        Parsear();
 
                         break;
                     }
@@ -234,39 +234,39 @@ namespace TrabajoPDF_INDEC
                 rt.NumeroLinea = 0;
             }
             
-            if (cuadro == 2) //if para validar en que cuadro estamos
+            if (cuadro == 2)
             {
-                while (!LeerLineas.EndOfStream) //while que recorre el cuadro por linea hasta el final del archivo
+                while (!LeerLineas.EndOfStream)
                 {
                     rt.Linea = LeerLineas.ReadLine();
                     
-                    if (++rt.NumeroLinea == 16) //if para obtener la linea especifica dentro del archivo de texto
+                    if (++rt.NumeroLinea == 16)
                     {
-                        Parsear(); //funcion para parsear los archivos de texto
+                        Parsear();
 
                         break;
                     }
                 }
 
-                while (!LeerLineas.EndOfStream) //while que recorre el cuadro por linea hasta el final del archivo
+                while (!LeerLineas.EndOfStream)
                 {
                     rt.Linea = LeerLineas.ReadLine();
                     
-                    if (++rt.NumeroLinea == 39) //if para obtener la linea especifica dentro del archivo de texto
+                    if (++rt.NumeroLinea == 39)
                     {
-                        Parsear(); //funcion para parsear los archivos de texto
+                        Parsear();
 
                         break;
                     }
                 }
 
-                while (!LeerLineas.EndOfStream) //while que recorre el cuadro por linea hasta el final del archivo
+                while (!LeerLineas.EndOfStream)
                 {
                     rt.Linea = LeerLineas.ReadLine();
                     
-                    if (++rt.NumeroLinea == 45) //if para obtener la linea especifica dentro del archivo de texto
+                    if (++rt.NumeroLinea == 45)
                     {
-                        Parsear(); //funcion para parsear los archivos de texto
+                        Parsear();
 
                         break;
                     }
@@ -275,11 +275,11 @@ namespace TrabajoPDF_INDEC
 
         }
 
-        private void buttonRutaTXT_Click(object sender, EventArgs e) //boton para obtener la ruta del archivo de texto que queremos analizar
+        private void buttonRutaTXT_Click(object sender, EventArgs e)
         {
-            rt.ObtenerRutaTXT(); //funcion para obtener la ruta donde se encuentran guardados los archivos de texto
+            rt.ObtenerRutaTXT();
 
-            textBoxRutaTXT.Text = rt.RutaArchivoTXT; 
+            textBoxRutaTXT.Text = rt.RutaArchivoTXT;
 
             cuadro++;
         }

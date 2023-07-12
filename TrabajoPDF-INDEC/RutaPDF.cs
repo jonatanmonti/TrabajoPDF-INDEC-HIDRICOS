@@ -44,7 +44,7 @@ namespace TrabajoPDF_INDEC
         }
 
 
-        public string ObtenerRuta() //esta funcion se utiliza para obtener la rtua donde se encuentra el pdf
+        public string ObtenerRuta()
         {
             OpenFileDialog OpenFileDialog = new OpenFileDialog();
 
