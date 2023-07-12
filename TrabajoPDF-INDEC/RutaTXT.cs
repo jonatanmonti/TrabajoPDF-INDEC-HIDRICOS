@@ -44,7 +44,7 @@ namespace TrabajoPDF_INDEC
             set { numeroLinea = value; }
         }
 
-        public string GuardarArchivoTXT()
+        public string GuardarArchivoTXT() //esta funcion sirve para guardar el archivo de texto
         {
 
             SaveFileDialog saveFileDialog = new SaveFileDialog();
@@ -52,7 +52,7 @@ namespace TrabajoPDF_INDEC
 
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
-                if (File.Exists(saveFileDialog.FileName))
+                if (File.Exists(saveFileDialog.FileName)) //aca se pregunta si el archivo de texto existe
                 {
 
                 }
@@ -62,7 +62,7 @@ namespace TrabajoPDF_INDEC
             return archivo;
         }
 
-        public string ObtenerRutaTXT()
+        public string ObtenerRutaTXT() //funcion para obtener la ruta donde se encuentran guardados los archivos de texto
         {
             OpenFileDialog OpenFileDialog = new OpenFileDialog();
 
