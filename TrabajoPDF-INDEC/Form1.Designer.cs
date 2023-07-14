@@ -73,7 +73,7 @@
             // 
             this.textBoxRuta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxRuta.Location = new System.Drawing.Point(198, 40);
-            this.textBoxRuta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxRuta.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxRuta.Name = "textBoxRuta";
             this.textBoxRuta.ReadOnly = true;
             this.textBoxRuta.Size = new System.Drawing.Size(360, 23);
@@ -83,7 +83,7 @@
             // 
             this.buttonRutaPDF.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonRutaPDF.Location = new System.Drawing.Point(9, 75);
-            this.buttonRutaPDF.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonRutaPDF.Margin = new System.Windows.Forms.Padding(2);
             this.buttonRutaPDF.Name = "buttonRutaPDF";
             this.buttonRutaPDF.Size = new System.Drawing.Size(548, 43);
             this.buttonRutaPDF.TabIndex = 7;
@@ -96,7 +96,7 @@
             this.buttontxt.Enabled = false;
             this.buttontxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttontxt.Location = new System.Drawing.Point(9, 290);
-            this.buttontxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttontxt.Margin = new System.Windows.Forms.Padding(2);
             this.buttontxt.Name = "buttontxt";
             this.buttontxt.Size = new System.Drawing.Size(548, 43);
             this.buttontxt.TabIndex = 8;
@@ -109,7 +109,7 @@
             this.buttonContinuar.Enabled = false;
             this.buttonContinuar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonContinuar.Location = new System.Drawing.Point(9, 338);
-            this.buttonContinuar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonContinuar.Margin = new System.Windows.Forms.Padding(2);
             this.buttonContinuar.Name = "buttonContinuar";
             this.buttonContinuar.Size = new System.Drawing.Size(548, 43);
             this.buttonContinuar.TabIndex = 9;
@@ -122,7 +122,7 @@
             this.buttonPrimeraPagina.Enabled = false;
             this.buttonPrimeraPagina.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonPrimeraPagina.Location = new System.Drawing.Point(9, 123);
-            this.buttonPrimeraPagina.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonPrimeraPagina.Margin = new System.Windows.Forms.Padding(2);
             this.buttonPrimeraPagina.Name = "buttonPrimeraPagina";
             this.buttonPrimeraPagina.Size = new System.Drawing.Size(197, 43);
             this.buttonPrimeraPagina.TabIndex = 10;
@@ -135,7 +135,7 @@
             this.buttonUltimaPagina.Enabled = false;
             this.buttonUltimaPagina.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonUltimaPagina.Location = new System.Drawing.Point(9, 171);
-            this.buttonUltimaPagina.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonUltimaPagina.Margin = new System.Windows.Forms.Padding(2);
             this.buttonUltimaPagina.Name = "buttonUltimaPagina";
             this.buttonUltimaPagina.Size = new System.Drawing.Size(197, 43);
             this.buttonUltimaPagina.TabIndex = 11;
@@ -147,7 +147,7 @@
             // 
             this.maskedTextBoxPrimeraPagina.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.maskedTextBoxPrimeraPagina.Location = new System.Drawing.Point(221, 135);
-            this.maskedTextBoxPrimeraPagina.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.maskedTextBoxPrimeraPagina.Margin = new System.Windows.Forms.Padding(2);
             this.maskedTextBoxPrimeraPagina.Name = "maskedTextBoxPrimeraPagina";
             this.maskedTextBoxPrimeraPagina.Size = new System.Drawing.Size(130, 23);
             this.maskedTextBoxPrimeraPagina.TabIndex = 12;
@@ -156,7 +156,7 @@
             // 
             this.maskedTextBoxUltimaPagina.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.maskedTextBoxUltimaPagina.Location = new System.Drawing.Point(221, 183);
-            this.maskedTextBoxUltimaPagina.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.maskedTextBoxUltimaPagina.Margin = new System.Windows.Forms.Padding(2);
             this.maskedTextBoxUltimaPagina.Name = "maskedTextBoxUltimaPagina";
             this.maskedTextBoxUltimaPagina.Size = new System.Drawing.Size(130, 23);
             this.maskedTextBoxUltimaPagina.TabIndex = 13;
@@ -165,7 +165,7 @@
             // 
             this.buttonPruebas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonPruebas.Location = new System.Drawing.Point(416, 123);
-            this.buttonPruebas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonPruebas.Margin = new System.Windows.Forms.Padding(2);
             this.buttonPruebas.Name = "buttonPruebas";
             this.buttonPruebas.Size = new System.Drawing.Size(142, 43);
             this.buttonPruebas.TabIndex = 14;
@@ -177,7 +177,7 @@
             // 
             this.textBoxRutaTXT.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxRutaTXT.Location = new System.Drawing.Point(198, 384);
-            this.textBoxRutaTXT.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxRutaTXT.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxRutaTXT.Name = "textBoxRutaTXT";
             this.textBoxRutaTXT.ReadOnly = true;
             this.textBoxRutaTXT.Size = new System.Drawing.Size(360, 23);
@@ -198,7 +198,7 @@
             // 
             this.buttonRutaTXT.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonRutaTXT.Location = new System.Drawing.Point(9, 410);
-            this.buttonRutaTXT.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonRutaTXT.Margin = new System.Windows.Forms.Padding(2);
             this.buttonRutaTXT.Name = "buttonRutaTXT";
             this.buttonRutaTXT.Size = new System.Drawing.Size(548, 43);
             this.buttonRutaTXT.TabIndex = 17;
@@ -210,11 +210,11 @@
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(572, 39);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(370, 241);
+            this.dataGridView1.Size = new System.Drawing.Size(568, 241);
             this.dataGridView1.TabIndex = 18;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -222,7 +222,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(950, 485);
+            this.ClientSize = new System.Drawing.Size(1166, 475);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.buttonRutaTXT);
             this.Controls.Add(this.labelRutaTXT);
@@ -238,7 +238,7 @@
             this.Controls.Add(this.labelRutaPdf);
             this.Controls.Add(this.textBoxRuta);
             this.Controls.Add(this.labelTitulo);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);

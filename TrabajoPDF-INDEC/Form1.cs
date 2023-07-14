@@ -134,7 +134,6 @@ namespace TrabajoPDF_INDEC
         private void buttonPrimeraPagina_Click(object sender, EventArgs e)
         {
 
-
             if (contador == 0)
             {
                 r.PrimeraPagina = int.Parse(maskedTextBoxPrimeraPagina.Text); //le pedimos al usuario la pagina donde inicia el cuadro
@@ -191,40 +190,59 @@ namespace TrabajoPDF_INDEC
             trozos = trozos.ToList().Where(x => !string.IsNullOrEmpty(x)).ToArray(); //esto sirve para indicar que todo espacio vacio extra no nos moleste
             int i = 0;
             Debug.WriteLine(rt.Linea);
-
+            dataGridView1.AllowUserToAddRows = false;
+            
             while (i < trozos.Length)
             {
                 Debug.WriteLine("[" + trozos[i] + "]");
                 i++;
             }
 
-            if (rt.NumeroLinea==27)
+            if (cuadro == 1)
             {
-                dataGridView1.ColumnCount = trozos.Length;
-                int x = 0;
-                for (x = 0; x<= dataGridView1.ColumnCount -1; x++)
+
+                if (rt.NumeroLinea == 27)
                 {
-                    dataGridView1.Columns[x].HeaderText = trozos[x];
-                }
+                    dataGridView1.ColumnCount = trozos.Length;
+                    int x = 0;
+                    for (x = 0; x <= dataGridView1.ColumnCount - 1; x++)
+                    {
+                        dataGridView1.Columns[x].HeaderText = trozos[x];
+                    }
 
-                
+                }else if(rt.NumeroLinea == 40)
+                 {
+                    dataGridView1.Rows.Add(trozos);
+                    dataGridView1.Rows.RemoveAt(0);
+                 }
+
             }
-
-            if (rt.NumeroLinea ==40)
+            else if(cuadro == 2)
             {
-                dataGridView1.Rows.Add(trozos);
+                if (rt.NumeroLinea == 16)
+                {
+
+                    dataGridView1.Rows.Add(trozos);
+
+                }
+                else if (rt.NumeroLinea == 39)
+                {
+
+                    dataGridView1.Rows.Add(trozos);
+
+                }
+                else if (rt.NumeroLinea == 45)
+                {
+
+                    dataGridView1.Rows.Add(trozos);
+
+                }
             }
 
-        }
-
-        public void Nombrartitulo()
-        {
-            
         }
 
         private void buttonPruebas_Click(object sender, EventArgs e)
         {
-
             
             StreamReader LeerLineas = File.OpenText(textBoxRutaTXT.Text);
 
