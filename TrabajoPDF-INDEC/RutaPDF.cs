@@ -10,6 +10,8 @@ namespace TrabajoPDF_INDEC
     public class RutaPDF
     {
 
+        public Form1 f = new Form1();
+
         private string rutaArchivo;
 
         public string RutaArchivo
@@ -52,6 +54,9 @@ namespace TrabajoPDF_INDEC
             {
                 rutaArchivo = OpenFileDialog.FileName;
             }
+
+            f.textBoxRuta.Text = rutaArchivo; //guardamos la direccion de la ruta en el textbox
+            f.buttonPrimeraPagina.Enabled = true;
 
             return rutaArchivo;
         }

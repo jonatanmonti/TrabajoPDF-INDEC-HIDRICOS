@@ -1,6 +1,6 @@
 ﻿namespace TrabajoPDF_INDEC
 {
-    partial class Form1
+    public partial class Form1
     {
         /// <summary>
         /// Required designer variable.
@@ -250,21 +250,21 @@
 
         #endregion
 
-        private System.Windows.Forms.Label labelTitulo;
-        private System.Windows.Forms.Label labelRutaPdf;
-        private System.Windows.Forms.TextBox textBoxRuta;
-        private System.Windows.Forms.Button buttonRutaPDF;
-        private System.Windows.Forms.Button buttontxt;
-        private System.Windows.Forms.Button buttonContinuar;
-        private System.Windows.Forms.Button buttonPrimeraPagina;
-        private System.Windows.Forms.Button buttonUltimaPagina;
-        private System.Windows.Forms.MaskedTextBox maskedTextBoxPrimeraPagina;
-        private System.Windows.Forms.MaskedTextBox maskedTextBoxUltimaPagina;
-        private System.Windows.Forms.Button buttonPruebas;
-        private System.Windows.Forms.TextBox textBoxRutaTXT;
-        private System.Windows.Forms.Label labelRutaTXT;
-        private System.Windows.Forms.Button buttonRutaTXT;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        public System.Windows.Forms.Label labelTitulo;
+        public System.Windows.Forms.Label labelRutaPdf;
+        public System.Windows.Forms.TextBox textBoxRuta;
+        public System.Windows.Forms.Button buttonRutaPDF;
+        public System.Windows.Forms.Button buttontxt;
+        public System.Windows.Forms.Button buttonContinuar;
+        public System.Windows.Forms.Button buttonPrimeraPagina;
+        public System.Windows.Forms.Button buttonUltimaPagina;
+        public System.Windows.Forms.MaskedTextBox maskedTextBoxPrimeraPagina;
+        public System.Windows.Forms.MaskedTextBox maskedTextBoxUltimaPagina;
+        public System.Windows.Forms.Button buttonPruebas;
+        public System.Windows.Forms.TextBox textBoxRutaTXT;
+        public System.Windows.Forms.Label labelRutaTXT;
+        public System.Windows.Forms.Button buttonRutaTXT;
+        public System.Windows.Forms.DataGridView dataGridView1;
     }
 }
 
