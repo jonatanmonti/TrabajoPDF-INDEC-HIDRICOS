@@ -163,13 +163,14 @@
             // 
             // buttonPruebas
             // 
+            this.buttonPruebas.Enabled = false;
             this.buttonPruebas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonPruebas.Location = new System.Drawing.Point(416, 123);
+            this.buttonPruebas.Location = new System.Drawing.Point(572, 290);
             this.buttonPruebas.Margin = new System.Windows.Forms.Padding(2);
             this.buttonPruebas.Name = "buttonPruebas";
-            this.buttonPruebas.Size = new System.Drawing.Size(142, 43);
+            this.buttonPruebas.Size = new System.Drawing.Size(568, 43);
             this.buttonPruebas.TabIndex = 14;
-            this.buttonPruebas.Text = "pruebas";
+            this.buttonPruebas.Text = "Agregar Valores";
             this.buttonPruebas.UseVisualStyleBackColor = true;
             this.buttonPruebas.Click += new System.EventHandler(this.buttonPruebas_Click);
             // 

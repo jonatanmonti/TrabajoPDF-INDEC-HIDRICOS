@@ -71,7 +71,6 @@ namespace TrabajoPDF_INDEC
                 buttontxt.Enabled = false;
             }
 
-
         }
 
         public void FuncionBotonContinuar() //funcion para obtener el contenido del pdf y escribirlo en archivos txt
@@ -128,8 +127,6 @@ namespace TrabajoPDF_INDEC
                 buttonPrimeraPagina.Enabled = true;
 
             }
-
-
 
         }
 
@@ -377,6 +374,9 @@ namespace TrabajoPDF_INDEC
                 }
             }
 
+            buttonPruebas.Enabled = false;
+            buttonRutaTXT.Enabled = true;
+
         }
 
         private void buttonRutaTXT_Click(object sender, EventArgs e) //boton para obtener la ruta del archivo de texto que queremos analizar
@@ -386,6 +386,8 @@ namespace TrabajoPDF_INDEC
             textBoxRutaTXT.Text = rt.RutaArchivoTXT; //guardamos la direccion de la ruta en el textbox
 
             cuadro++;
+            buttonRutaTXT.Enabled = false;
+            buttonPruebas.Enabled=true;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
