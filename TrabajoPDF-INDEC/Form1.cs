@@ -39,9 +39,9 @@ namespace TrabajoPDF_INDEC
         {
             r.ObtenerRuta(); //funcion para obtener la ruta
 
-            //textBoxRuta.Text = r.RutaArchivo; //guardamos la direccion de la ruta en el textbox
+            textBoxRuta.Text = r.RutaArchivo; //guardamos la direccion de la ruta en el textbox
 
-            //buttonPrimeraPagina.Enabled = true;
+            buttonPrimeraPagina.Enabled = true;
 
         }
 

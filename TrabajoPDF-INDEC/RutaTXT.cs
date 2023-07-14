@@ -11,7 +11,6 @@ namespace TrabajoPDF_INDEC
     public class RutaTXT
     {
 
-        public Form1 f = new Form1();
 
         private string archivo;
 
@@ -70,11 +69,8 @@ namespace TrabajoPDF_INDEC
             if (OpenFileDialog.ShowDialog() == DialogResult.OK)
             {
                 rutaArchivoTXT = OpenFileDialog.FileName;
-                
             }
-            
-            
-            
+
             return rutaArchivoTXT;
         }
 
