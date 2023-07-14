@@ -13,6 +13,8 @@ using iText.Kernel.Pdf;
 using iText.Kernel.Pdf.Canvas.Parser;
 using iText.Kernel.Pdf.Canvas.Parser.Listener;
 using Microsoft.Extensions.Options;
+using Microsoft.Office.Interop.Excel;
+using objExcel = Microsoft.Office.Interop.Excel;
 
 namespace TrabajoPDF_INDEC
 {
@@ -388,6 +390,24 @@ namespace TrabajoPDF_INDEC
             cuadro++;
             buttonRutaTXT.Enabled = false;
             buttonPruebas.Enabled=true;
+        }
+
+        private void buttonExportarExcel_Click(object sender, EventArgs e)
+        {
+            objExcel.Application application = new objExcel.Application();
+            Workbook objLibro = application.Workbooks.Add(XlSheetType.xlWorksheet);
+            Worksheet objHoja = (Worksheet)application.ActiveSheet;
+
+            application.Visible = true;
+
+            foreach (DataGridViewColumn columna in dataGridView1.Columns)
+            {
+                objHoja.Cells[1, columna.Index + 1] = columna.HeaderText;
+                foreach(DataGridViewRow fila in dataGridView1.Rows)
+                {
+                    objHoja.Cells[fila.Index + 2, columna.Index + 1] = fila.Cells[columna.Index].Value;
+                }
+            }
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
