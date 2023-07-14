@@ -25,6 +25,8 @@ namespace TrabajoPDF_INDEC
 
         int contador = 0; int cuadro = 0;
 
+        string numero1 = "", numero2 = "";
+
         public Form1()
         {
             InitializeComponent();
@@ -201,20 +203,26 @@ namespace TrabajoPDF_INDEC
             if (cuadro == 1)
             {
 
-                if (rt.NumeroLinea == 27)
+                if (rt.NumeroLinea == 13)
                 {
-                    dataGridView1.ColumnCount = trozos.Length;
-                    int x = 0;
-                    for (x = 0; x <= dataGridView1.ColumnCount - 1; x++)
-                    {
-                        dataGridView1.Columns[x].HeaderText = trozos[x];
-                    }
-
-                }else if(rt.NumeroLinea == 40)
-                 {
-                    dataGridView1.Rows.Add(trozos);
-                    dataGridView1.Rows.RemoveAt(0);
-                 }
+                    dataGridView1.ColumnCount = 6;
+                    dataGridView1.Columns[0].HeaderText = "Insumos";
+                    dataGridView1.Columns[1].HeaderText = "ponderacion";
+                    dataGridView1.Columns[2].HeaderText = trozos[12];
+                    dataGridView1.Columns[3].HeaderText = trozos[13];
+                    dataGridView1.Columns[4].HeaderText = "variacion";
+                    dataGridView1.Columns[5].HeaderText = "indice de variacion resultante";
+                }
+                else if(rt.NumeroLinea == 27)
+                {
+                    double resultado = double.Parse(trozos[19]) / double.Parse(trozos[18]);    
+                    dataGridView1.Rows.Add("asfaltos, combustibles y lubricantes","",trozos[18],trozos[19],resultado, "");
+                    //dataGridView1.Rows.RemoveAt(0);
+                }else if (rt.NumeroLinea == 40)
+                {
+                    double resultado = double.Parse(trozos[16]) / double.Parse(trozos[15]);
+                    dataGridView1.Rows.Add("Equipo - Amortizacion de equipos", "", trozos[15], trozos[16], resultado, "");
+                }
 
             }
             else if(cuadro == 2)
@@ -222,20 +230,35 @@ namespace TrabajoPDF_INDEC
                 if (rt.NumeroLinea == 16)
                 {
 
-                    dataGridView1.Rows.Add(trozos);
+                    double resultado = double.Parse(trozos[16]) / double.Parse(trozos[15]);
+                    dataGridView1.Rows.Add("Mano de obra", "", trozos[15], trozos[16], resultado, "");
 
                 }
                 else if (rt.NumeroLinea == 39)
                 {
 
-                    dataGridView1.Rows.Add(trozos);
+                    double resultado = double.Parse(trozos[16]) / double.Parse(trozos[15]);
+                    dataGridView1.Rows.Add("Gastos Generales", "", trozos[15], trozos[16], resultado, "");
 
                 }
                 else if (rt.NumeroLinea == 45)
                 {
 
-                    dataGridView1.Rows.Add(trozos);
+                    double resultado = double.Parse(trozos[16]) / double.Parse(trozos[15]);
+                    dataGridView1.Rows.Add("Hormigon", "", trozos[15], trozos[16], resultado, "");
 
+                }
+            }else if (cuadro == 3)
+            {
+
+                if(rt.NumeroLinea == 20)
+                {
+                    numero1 = trozos[2].ToString();
+                }else if (rt.NumeroLinea == 21)
+                {
+                    numero2 = trozos[2].ToString();
+                    double resultado = double.Parse(numero2) / double.Parse(numero1);
+                    dataGridView1.Rows.Add("Acero", "", numero1, numero2, resultado, "");
                 }
             }
 
@@ -252,11 +275,11 @@ namespace TrabajoPDF_INDEC
                 {
                     rt.Linea = LeerLineas.ReadLine();
                     
-                    if (++rt.NumeroLinea == 27) //if para obtener la linea especifica dentro del archivo de texto
+                    if (++rt.NumeroLinea == 13) //if para obtener la linea especifica dentro del archivo de texto
                     {
                         Parsear(); //funcion para parsear los archivos de texto
 
-                        dataGridView1.Rows.Add();
+                        //dataGridView1.Rows.Add();
 
                         break;
 
@@ -267,6 +290,18 @@ namespace TrabajoPDF_INDEC
                 {
                     rt.Linea = LeerLineas.ReadLine();
                     
+                    if (++rt.NumeroLinea == 27) //if para obtener la linea especifica dentro del archivo de texto
+                    {
+                        Parsear(); //funcion para parsear los archivos de texto
+
+                        break;
+                    }
+                }
+
+                while (!LeerLineas.EndOfStream) //while que recorre el cuadro por linea hasta el final del archivo
+                {
+                    rt.Linea = LeerLineas.ReadLine();
+
                     if (++rt.NumeroLinea == 40) //if para obtener la linea especifica dentro del archivo de texto
                     {
                         Parsear(); //funcion para parsear los archivos de texto
@@ -276,9 +311,7 @@ namespace TrabajoPDF_INDEC
                 }
 
                 rt.NumeroLinea = 0;
-            }
-            
-            if (cuadro == 2) //if para validar en que cuadro estamos
+            }else if (cuadro == 2) //if para validar en que cuadro estamos
             {
                 while (!LeerLineas.EndOfStream) //while que recorre el cuadro por linea hasta el final del archivo
                 {
@@ -309,6 +342,33 @@ namespace TrabajoPDF_INDEC
                     rt.Linea = LeerLineas.ReadLine();
                     
                     if (++rt.NumeroLinea == 45) //if para obtener la linea especifica dentro del archivo de texto
+                    {
+                        Parsear(); //funcion para parsear los archivos de texto
+
+                        break;
+                    }
+                }
+                rt.NumeroLinea = 0;
+            }
+            else if (cuadro == 3)
+            {
+                while (!LeerLineas.EndOfStream) //while que recorre el cuadro por linea hasta el final del archivo
+                {
+                    rt.Linea = LeerLineas.ReadLine();
+
+                    if (++rt.NumeroLinea == 20) //if para obtener la linea especifica dentro del archivo de texto
+                    {
+                        Parsear(); //funcion para parsear los archivos de texto
+
+                        break;
+                    }
+                }
+
+                while (!LeerLineas.EndOfStream) //while que recorre el cuadro por linea hasta el final del archivo
+                {
+                    rt.Linea = LeerLineas.ReadLine();
+
+                    if (++rt.NumeroLinea == 21) //if para obtener la linea especifica dentro del archivo de texto
                     {
                         Parsear(); //funcion para parsear los archivos de texto
 
