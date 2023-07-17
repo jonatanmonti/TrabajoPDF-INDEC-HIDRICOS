@@ -70,6 +70,13 @@ namespace TrabajoPDF_INDEC
             {
                 rt.GuardarArchivoTXT(); //funcion para guardar el archivo de texto
                 buttonContinuar.Enabled = true;
+
+                buttontxt.Text = "Cuadro 2 guardar txt";
+                buttontxt.Enabled = false;
+            }else if (contador == 3)
+            {
+                rt.GuardarArchivoTXT(); //funcion para guardar el archivo de texto
+                buttonContinuar.Enabled = true;
                 buttontxt.Enabled = false;
             }
 
@@ -125,9 +132,19 @@ namespace TrabajoPDF_INDEC
             } else if (contador == 2)
             {
                 FuncionBotonContinuar(); //funcion para obtener el contenido del pdf y escribirlo en archivos txt
+
+                buttonContinuar.Text = "Cuadro 2 crear txt";
                 buttonContinuar.Enabled = false;
+
+                contador++;
+
                 buttonPrimeraPagina.Enabled = true;
 
+            }else if (contador == 3)
+            {
+                FuncionBotonContinuar(); //funcion para obtener el contenido del pdf y escribirlo en archivos txt
+                buttonContinuar.Enabled = false;
+                buttonPrimeraPagina.Enabled = true;
             }
 
         }
@@ -154,6 +171,13 @@ namespace TrabajoPDF_INDEC
             {
                 r.PrimeraPagina = int.Parse(maskedTextBoxPrimeraPagina.Text); //le pedimos al usuario la pagina donde inicia el cuadro
                 buttonUltimaPagina.Enabled = true;
+
+                buttonPrimeraPagina.Text = "Cuadro 2 Inicio";
+                buttonPrimeraPagina.Enabled = false;
+            }else if (contador == 3)
+            {
+                r.PrimeraPagina = int.Parse(maskedTextBoxPrimeraPagina.Text); //le pedimos al usuario la pagina donde inicia el cuadro
+                buttonUltimaPagina.Enabled = true;
                 buttonPrimeraPagina.Enabled = false;
             }
         }
@@ -177,6 +201,13 @@ namespace TrabajoPDF_INDEC
                 buttonUltimaPagina.Enabled = false;
             }
             else if (contador == 2)
+            {
+                r.UltimaPagina = int.Parse(maskedTextBoxUltimaPagina.Text); //le pedimos al usuario la pagina donde finaliza el cuadro
+                buttontxt.Enabled = true;
+
+                buttonUltimaPagina.Text = "Cuadro 2 Fin";
+                buttonUltimaPagina.Enabled = false;
+            }else if (contador == 3)
             {
                 r.UltimaPagina = int.Parse(maskedTextBoxUltimaPagina.Text); //le pedimos al usuario la pagina donde finaliza el cuadro
                 buttontxt.Enabled = true;

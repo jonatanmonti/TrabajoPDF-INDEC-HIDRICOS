@@ -3,16 +3,23 @@
   <Class Name="TrabajoPDF_INDEC.RutaPDF">
     <Position X="2.75" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AIAAAAAAAAAAACAAAAAAAAAAwAAAAEAYAAAACACAgAA=</HashCode>
+      <HashCode>AIAAAAAAAAAAACAAAAAAAAAAwAAAAEAIAAAACACAgAA=</HashCode>
       <FileName>RutaPDF.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TrabajoPDF_INDEC.RutaTXT">
     <Position X="5" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>gAAACAAgAAAAIAACAAAAAgAAAACAAAAYAACIAAAAAAA=</HashCode>
+      <HashCode>gAAACAAgAAAAIAACAAAAAgAAAACAAAAIAACIAAAAAAA=</HashCode>
       <FileName>RutaTXT.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Enum Name="TrabajoPDF_INDEC.DesaguesPluviales">
+    <Position X="7" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CCAAAAAABAAgAAAIAAAAAAAIAAAAAAAAAAABAAAAAAA=</HashCode>
+      <FileName>DesaguesPluviales.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>
