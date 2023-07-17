@@ -230,7 +230,7 @@ namespace TrabajoPDF_INDEC
                 i++;
             }
 
-            if (cuadro == 1)
+            if (cuadro == 1) //cuadro 1
             {
 
                 if (rt.NumeroLinea == 13)
@@ -255,7 +255,7 @@ namespace TrabajoPDF_INDEC
                 }
 
             }
-            else if(cuadro == 2)
+            else if(cuadro == 2) //cuadro 5
             {
                 if (rt.NumeroLinea == 16)
                 {
@@ -278,7 +278,7 @@ namespace TrabajoPDF_INDEC
                     dataGridView1.Rows.Add("Hormigon", "", trozos[15], trozos[16], resultado, "");
 
                 }
-            }else if (cuadro == 3)
+            }else if (cuadro == 3) //cuadro 4
             {
 
                 if(rt.NumeroLinea == 20)
