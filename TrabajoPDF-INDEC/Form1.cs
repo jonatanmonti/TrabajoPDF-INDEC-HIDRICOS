@@ -71,7 +71,7 @@ namespace TrabajoPDF_INDEC
                 rt.GuardarArchivoTXT(); //funcion para guardar el archivo de texto
                 buttonContinuar.Enabled = true;
 
-                buttontxt.Text = "Cuadro 2 guardar txt";
+                buttontxt.Text = "Cuadro 3 guardar txt";
                 buttontxt.Enabled = false;
             }else if (contador == 3)
             {
@@ -133,7 +133,7 @@ namespace TrabajoPDF_INDEC
             {
                 FuncionBotonContinuar(); //funcion para obtener el contenido del pdf y escribirlo en archivos txt
 
-                buttonContinuar.Text = "Cuadro 2 crear txt";
+                buttonContinuar.Text = "Cuadro 3 crear txt";
                 buttonContinuar.Enabled = false;
 
                 contador++;
@@ -172,7 +172,7 @@ namespace TrabajoPDF_INDEC
                 r.PrimeraPagina = int.Parse(maskedTextBoxPrimeraPagina.Text); //le pedimos al usuario la pagina donde inicia el cuadro
                 buttonUltimaPagina.Enabled = true;
 
-                buttonPrimeraPagina.Text = "Cuadro 2 Inicio";
+                buttonPrimeraPagina.Text = "Cuadro 3 Inicio";
                 buttonPrimeraPagina.Enabled = false;
             }else if (contador == 3)
             {
@@ -205,7 +205,7 @@ namespace TrabajoPDF_INDEC
                 r.UltimaPagina = int.Parse(maskedTextBoxUltimaPagina.Text); //le pedimos al usuario la pagina donde finaliza el cuadro
                 buttontxt.Enabled = true;
 
-                buttonUltimaPagina.Text = "Cuadro 2 Fin";
+                buttonUltimaPagina.Text = "Cuadro 3 Fin";
                 buttonUltimaPagina.Enabled = false;
             }else if (contador == 3)
             {
@@ -290,6 +290,15 @@ namespace TrabajoPDF_INDEC
                     double resultado = double.Parse(numero2) / double.Parse(numero1);
                     dataGridView1.Rows.Add("Acero", "", numero1, numero2, resultado, "");
                 }
+            }else if (cuadro == 4) //cuadro 3
+            {
+                if (rt.NumeroLinea == 24)
+                {
+
+                    double resultado = double.Parse(trozos[16]) / double.Parse(trozos[15]);
+                    dataGridView1.Rows.Add("Hierros y aceros en formas basicas", "", trozos[18], trozos[19], resultado, "");
+
+                }
             }
 
         }
@@ -299,7 +308,7 @@ namespace TrabajoPDF_INDEC
             
             StreamReader LeerLineas = File.OpenText(textBoxRutaTXT.Text);
 
-            if (cuadro == 1) //if para validar en que cuadro estamos
+            if (cuadro == 1) //if para validar en que cuadro estamos \\cuadro 1
             {
                 while (!LeerLineas.EndOfStream) //while que recorre el cuadro por linea hasta el final del archivo
                 {
@@ -341,7 +350,7 @@ namespace TrabajoPDF_INDEC
                 }
 
                 rt.NumeroLinea = 0;
-            }else if (cuadro == 2) //if para validar en que cuadro estamos
+            }else if (cuadro == 2) //if para validar en que cuadro estamos \\cuadro 5
             {
                 while (!LeerLineas.EndOfStream) //while que recorre el cuadro por linea hasta el final del archivo
                 {
@@ -380,7 +389,7 @@ namespace TrabajoPDF_INDEC
                 }
                 rt.NumeroLinea = 0;
             }
-            else if (cuadro == 3)
+            else if (cuadro == 3) //cuadro 4
             {
                 while (!LeerLineas.EndOfStream) //while que recorre el cuadro por linea hasta el final del archivo
                 {
@@ -399,6 +408,20 @@ namespace TrabajoPDF_INDEC
                     rt.Linea = LeerLineas.ReadLine();
 
                     if (++rt.NumeroLinea == 21) //if para obtener la linea especifica dentro del archivo de texto
+                    {
+                        Parsear(); //funcion para parsear los archivos de texto
+
+                        break;
+                    }
+                }
+                rt.NumeroLinea = 0;
+            }else if (cuadro == 4) //cuadro 3
+            {
+                while (!LeerLineas.EndOfStream) //while que recorre el cuadro por linea hasta el final del archivo
+                {
+                    rt.Linea = LeerLineas.ReadLine();
+
+                    if (++rt.NumeroLinea == 24) //if para obtener la linea especifica dentro del archivo de texto
                     {
                         Parsear(); //funcion para parsear los archivos de texto
 
