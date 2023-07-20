@@ -295,7 +295,7 @@ namespace TrabajoPDF_INDEC
                 if (rt.NumeroLinea == 24)
                 {
 
-                    double resultado = double.Parse(trozos[16]) / double.Parse(trozos[15]);
+                    double resultado = double.Parse(trozos[19]) / double.Parse(trozos[18]);
                     dataGridView1.Rows.Add("Hierros y aceros en formas basicas", "", trozos[18], trozos[19], resultado, "");
 
                 }
