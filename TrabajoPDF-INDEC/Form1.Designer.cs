@@ -44,7 +44,14 @@
             this.buttonRutaTXT = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.buttonExportarExcel = new System.Windows.Forms.Button();
+            this.radioButtonDesaguesPluviales = new System.Windows.Forms.RadioButton();
+            this.radioButtonExcavacionCanal = new System.Windows.Forms.RadioButton();
+            this.radioButtonPresas = new System.Windows.Forms.RadioButton();
+            this.radioButtonDefensaCostera = new System.Windows.Forms.RadioButton();
+            this.radioButtonDefensaPoblacion = new System.Windows.Forms.RadioButton();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelTitulo
@@ -232,11 +239,81 @@
             this.buttonExportarExcel.UseVisualStyleBackColor = true;
             this.buttonExportarExcel.Click += new System.EventHandler(this.buttonExportarExcel_Click);
             // 
+            // radioButtonDesaguesPluviales
+            // 
+            this.radioButtonDesaguesPluviales.AutoSize = true;
+            this.radioButtonDesaguesPluviales.Location = new System.Drawing.Point(6, 19);
+            this.radioButtonDesaguesPluviales.Name = "radioButtonDesaguesPluviales";
+            this.radioButtonDesaguesPluviales.Size = new System.Drawing.Size(118, 17);
+            this.radioButtonDesaguesPluviales.TabIndex = 20;
+            this.radioButtonDesaguesPluviales.TabStop = true;
+            this.radioButtonDesaguesPluviales.Text = "Desagües Pluviales";
+            this.radioButtonDesaguesPluviales.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonExcavacionCanal
+            // 
+            this.radioButtonExcavacionCanal.AutoSize = true;
+            this.radioButtonExcavacionCanal.Location = new System.Drawing.Point(6, 42);
+            this.radioButtonExcavacionCanal.Name = "radioButtonExcavacionCanal";
+            this.radioButtonExcavacionCanal.Size = new System.Drawing.Size(126, 17);
+            this.radioButtonExcavacionCanal.TabIndex = 21;
+            this.radioButtonExcavacionCanal.TabStop = true;
+            this.radioButtonExcavacionCanal.Text = "Excavacion de Canal";
+            this.radioButtonExcavacionCanal.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonPresas
+            // 
+            this.radioButtonPresas.AutoSize = true;
+            this.radioButtonPresas.Location = new System.Drawing.Point(6, 65);
+            this.radioButtonPresas.Name = "radioButtonPresas";
+            this.radioButtonPresas.Size = new System.Drawing.Size(57, 17);
+            this.radioButtonPresas.TabIndex = 22;
+            this.radioButtonPresas.TabStop = true;
+            this.radioButtonPresas.Text = "Presas";
+            this.radioButtonPresas.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonDefensaCostera
+            // 
+            this.radioButtonDefensaCostera.AutoSize = true;
+            this.radioButtonDefensaCostera.Location = new System.Drawing.Point(6, 88);
+            this.radioButtonDefensaCostera.Name = "radioButtonDefensaCostera";
+            this.radioButtonDefensaCostera.Size = new System.Drawing.Size(98, 17);
+            this.radioButtonDefensaCostera.TabIndex = 23;
+            this.radioButtonDefensaCostera.TabStop = true;
+            this.radioButtonDefensaCostera.Text = "Defensa Costra";
+            this.radioButtonDefensaCostera.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonDefensaPoblacion
+            // 
+            this.radioButtonDefensaPoblacion.AutoSize = true;
+            this.radioButtonDefensaPoblacion.Location = new System.Drawing.Point(6, 111);
+            this.radioButtonDefensaPoblacion.Name = "radioButtonDefensaPoblacion";
+            this.radioButtonDefensaPoblacion.Size = new System.Drawing.Size(130, 17);
+            this.radioButtonDefensaPoblacion.TabIndex = 24;
+            this.radioButtonDefensaPoblacion.TabStop = true;
+            this.radioButtonDefensaPoblacion.Text = "Defensa de Poblacion";
+            this.radioButtonDefensaPoblacion.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.radioButtonDesaguesPluviales);
+            this.groupBox1.Controls.Add(this.radioButtonDefensaPoblacion);
+            this.groupBox1.Controls.Add(this.radioButtonExcavacionCanal);
+            this.groupBox1.Controls.Add(this.radioButtonDefensaCostera);
+            this.groupBox1.Controls.Add(this.radioButtonPresas);
+            this.groupBox1.Location = new System.Drawing.Point(756, 401);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(269, 145);
+            this.groupBox1.TabIndex = 25;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Obras";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1166, 475);
+            this.ClientSize = new System.Drawing.Size(1166, 580);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.buttonExportarExcel);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.buttonRutaTXT);
@@ -258,6 +335,8 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -281,6 +360,12 @@
         private System.Windows.Forms.Button buttonRutaTXT;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button buttonExportarExcel;
+        private System.Windows.Forms.RadioButton radioButtonDesaguesPluviales;
+        private System.Windows.Forms.RadioButton radioButtonExcavacionCanal;
+        private System.Windows.Forms.RadioButton radioButtonPresas;
+        private System.Windows.Forms.RadioButton radioButtonDefensaCostera;
+        private System.Windows.Forms.RadioButton radioButtonDefensaPoblacion;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
 
