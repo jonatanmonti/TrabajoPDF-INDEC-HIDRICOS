@@ -55,6 +55,5 @@ namespace TrabajoPDF_INDEC
 			get { return total; }
 			set { total = value; }
 		}
-
 	}
 }

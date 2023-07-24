@@ -17,11 +17,11 @@
   <Class Name="TrabajoPDF_INDEC.ObraCincoItem">
     <Position X="7.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ACAEAAAABAAACAAAAAgAAAIAAAAAYBAgAEAAIAAAAAA=</HashCode>
+      <HashCode>ACAEAAAABAAACACAAAgAgAIAAAAAYBAgAEAAIAAAAAA=</HashCode>
       <FileName>ObrasCincoItems.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="TrabajoPDF_INDEC.ClaseSieteItem">
+  <Class Name="TrabajoPDF_INDEC.ObraSieteItem">
     <Position X="6.5" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>CAAAAAgAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAA=</HashCode>

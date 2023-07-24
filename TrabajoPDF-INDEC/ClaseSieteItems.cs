@@ -5,7 +5,7 @@ using System.Text;
 
 namespace TrabajoPDF_INDEC
 {
-    public class ClaseSieteItem : ObraCincoItem
+    public class ObraSieteItem : ObraCincoItem
     {
 
 		private float hormigon;

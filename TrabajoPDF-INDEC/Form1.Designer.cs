@@ -249,6 +249,7 @@
             this.radioButtonDesaguesPluviales.TabStop = true;
             this.radioButtonDesaguesPluviales.Text = "Desagües Pluviales";
             this.radioButtonDesaguesPluviales.UseVisualStyleBackColor = true;
+            this.radioButtonDesaguesPluviales.CheckedChanged += new System.EventHandler(this.radioButtonDesaguesPluviales_CheckedChanged);
             // 
             // radioButtonExcavacionCanal
             // 
@@ -260,6 +261,7 @@
             this.radioButtonExcavacionCanal.TabStop = true;
             this.radioButtonExcavacionCanal.Text = "Excavacion de Canal";
             this.radioButtonExcavacionCanal.UseVisualStyleBackColor = true;
+            this.radioButtonExcavacionCanal.CheckedChanged += new System.EventHandler(this.radioButtonExcavacionCanal_CheckedChanged);
             // 
             // radioButtonPresas
             // 
@@ -271,6 +273,7 @@
             this.radioButtonPresas.TabStop = true;
             this.radioButtonPresas.Text = "Presas";
             this.radioButtonPresas.UseVisualStyleBackColor = true;
+            this.radioButtonPresas.CheckedChanged += new System.EventHandler(this.radioButtonPresas_CheckedChanged);
             // 
             // radioButtonDefensaCostera
             // 
@@ -282,6 +285,7 @@
             this.radioButtonDefensaCostera.TabStop = true;
             this.radioButtonDefensaCostera.Text = "Defensa Costra";
             this.radioButtonDefensaCostera.UseVisualStyleBackColor = true;
+            this.radioButtonDefensaCostera.CheckedChanged += new System.EventHandler(this.radioButtonDefensaCostera_CheckedChanged);
             // 
             // radioButtonDefensaPoblacion
             // 
@@ -293,6 +297,7 @@
             this.radioButtonDefensaPoblacion.TabStop = true;
             this.radioButtonDefensaPoblacion.Text = "Defensa de Poblacion";
             this.radioButtonDefensaPoblacion.UseVisualStyleBackColor = true;
+            this.radioButtonDefensaPoblacion.CheckedChanged += new System.EventHandler(this.radioButtonDefensaPoblacion_CheckedChanged);
             // 
             // groupBox1
             // 
