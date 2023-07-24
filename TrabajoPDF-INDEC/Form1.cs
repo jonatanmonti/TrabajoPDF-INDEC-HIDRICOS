@@ -260,7 +260,7 @@ namespace TrabajoPDF_INDEC
                         dataGridView1.Rows.Add("asfaltos, combustibles y lubricantes", ponderacion, trozos[18], trozos[19], variacion, IndiceVariacionResultante);
                         double variacionFinanciera = NuevoCostoFinanciero / ViejoCostoFinanciero;
                         double IndiceVariacionResultanteFinanciera = ponderacion * variacionFinanciera;
-                        dataGridView1.Rows.Add("Costo Financiero", PonderacionCostoFinanciero, ViejoCostoFinanciero, NuevoCostoFinanciero, variacion, IndiceVariacionResultante);
+                        dataGridView1.Rows.Add("Costo Financiero", PonderacionCostoFinanciero, ViejoCostoFinanciero, NuevoCostoFinanciero, variacionFinanciera, IndiceVariacionResultante);
 
                     }
                     else if(EleccionObra == 2 || EleccionObra == 5)
@@ -272,7 +272,7 @@ namespace TrabajoPDF_INDEC
                         dataGridView1.Rows.Add("asfaltos, combustibles y lubricantes", ponderacion, trozos[18], trozos[19], variacion, IndiceVariacionResultante);
                         double variacionFinanciera = NuevoCostoFinanciero / ViejoCostoFinanciero;
                         double IndiceVariacionResultanteFinanciera = ponderacion * variacionFinanciera;
-                        dataGridView1.Rows.Add("Costo Financiero", PonderacionCostoFinanciero, ViejoCostoFinanciero, NuevoCostoFinanciero, variacion, IndiceVariacionResultante);
+                        dataGridView1.Rows.Add("Costo Financiero", PonderacionCostoFinanciero, ViejoCostoFinanciero, NuevoCostoFinanciero, variacionFinanciera, IndiceVariacionResultante);
 
                     }
                     else if (EleccionObra == 4)
@@ -284,7 +284,7 @@ namespace TrabajoPDF_INDEC
                         dataGridView1.Rows.Add("asfaltos, combustibles y lubricantes", ponderacion, trozos[18], trozos[19], variacion, IndiceVariacionResultante);
                         double variacionFinanciera = NuevoCostoFinanciero / ViejoCostoFinanciero;
                         double IndiceVariacionResultanteFinanciera = ponderacion * variacionFinanciera;
-                        dataGridView1.Rows.Add("Costo Financiero", PonderacionCostoFinanciero, ViejoCostoFinanciero, NuevoCostoFinanciero, variacion, IndiceVariacionResultante);
+                        dataGridView1.Rows.Add("Costo Financiero", PonderacionCostoFinanciero, ViejoCostoFinanciero, NuevoCostoFinanciero, variacionFinanciera, IndiceVariacionResultante);
                     }
                 }
                 else if (rt.NumeroLinea == 40)
