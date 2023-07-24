@@ -54,6 +54,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.maskedViejoCostoFinanciero = new System.Windows.Forms.MaskedTextBox();
             this.maskedNuevoCostoFinanciero = new System.Windows.Forms.MaskedTextBox();
+            this.buttonTotal = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -359,11 +360,23 @@
             this.maskedNuevoCostoFinanciero.Size = new System.Drawing.Size(100, 22);
             this.maskedNuevoCostoFinanciero.TabIndex = 29;
             // 
+            // buttonTotal
+            // 
+            this.buttonTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonTotal.Location = new System.Drawing.Point(1038, 499);
+            this.buttonTotal.Name = "buttonTotal";
+            this.buttonTotal.Size = new System.Drawing.Size(116, 40);
+            this.buttonTotal.TabIndex = 30;
+            this.buttonTotal.Text = "Total";
+            this.buttonTotal.UseVisualStyleBackColor = true;
+            this.buttonTotal.Click += new System.EventHandler(this.buttonTotal_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1166, 580);
+            this.Controls.Add(this.buttonTotal);
             this.Controls.Add(this.maskedNuevoCostoFinanciero);
             this.Controls.Add(this.maskedViejoCostoFinanciero);
             this.Controls.Add(this.button2);
@@ -425,6 +438,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.MaskedTextBox maskedViejoCostoFinanciero;
         private System.Windows.Forms.MaskedTextBox maskedNuevoCostoFinanciero;
+        private System.Windows.Forms.Button buttonTotal;
     }
 }
 

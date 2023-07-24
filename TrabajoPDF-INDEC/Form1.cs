@@ -27,7 +27,7 @@ namespace TrabajoPDF_INDEC
 
         int contador = 0, cuadro = 0, EleccionObra;
 
-        double ViejoCostoFinanciero, NuevoCostoFinanciero, PonderacionCostoFinanciero = 0.03;
+        double ViejoCostoFinanciero, NuevoCostoFinanciero, PonderacionCostoFinanciero = 0.03, total, PonderacionTotal;
 
         string numero1 = "", numero2 = "";
 
@@ -260,7 +260,11 @@ namespace TrabajoPDF_INDEC
                         dataGridView1.Rows.Add("asfaltos, combustibles y lubricantes", ponderacion, trozos[18], trozos[19], variacion, IndiceVariacionResultante);
                         double variacionFinanciera = NuevoCostoFinanciero / ViejoCostoFinanciero;
                         double IndiceVariacionResultanteFinanciera = ponderacion * variacionFinanciera;
-                        dataGridView1.Rows.Add("Costo Financiero", PonderacionCostoFinanciero, ViejoCostoFinanciero, NuevoCostoFinanciero, variacionFinanciera, IndiceVariacionResultante);
+                        dataGridView1.Rows.Add("Costo Financiero", PonderacionCostoFinanciero, ViejoCostoFinanciero, NuevoCostoFinanciero, variacionFinanciera, IndiceVariacionResultanteFinanciera);
+                        total = total + IndiceVariacionResultanteFinanciera;
+                        total = total + IndiceVariacionResultante;
+                        PonderacionTotal = PonderacionTotal + PonderacionCostoFinanciero;
+                        PonderacionTotal = PonderacionTotal + ponderacion;
 
                     }
                     else if(EleccionObra == 2 || EleccionObra == 5)
@@ -272,7 +276,11 @@ namespace TrabajoPDF_INDEC
                         dataGridView1.Rows.Add("asfaltos, combustibles y lubricantes", ponderacion, trozos[18], trozos[19], variacion, IndiceVariacionResultante);
                         double variacionFinanciera = NuevoCostoFinanciero / ViejoCostoFinanciero;
                         double IndiceVariacionResultanteFinanciera = ponderacion * variacionFinanciera;
-                        dataGridView1.Rows.Add("Costo Financiero", PonderacionCostoFinanciero, ViejoCostoFinanciero, NuevoCostoFinanciero, variacionFinanciera, IndiceVariacionResultante);
+                        dataGridView1.Rows.Add("Costo Financiero", PonderacionCostoFinanciero, ViejoCostoFinanciero, NuevoCostoFinanciero, variacionFinanciera, IndiceVariacionResultanteFinanciera);
+                        total = total + IndiceVariacionResultanteFinanciera;
+                        total = total + IndiceVariacionResultante;
+                        PonderacionTotal = PonderacionTotal + PonderacionCostoFinanciero;
+                        PonderacionTotal = PonderacionTotal + ponderacion;
 
                     }
                     else if (EleccionObra == 4)
@@ -284,7 +292,11 @@ namespace TrabajoPDF_INDEC
                         dataGridView1.Rows.Add("asfaltos, combustibles y lubricantes", ponderacion, trozos[18], trozos[19], variacion, IndiceVariacionResultante);
                         double variacionFinanciera = NuevoCostoFinanciero / ViejoCostoFinanciero;
                         double IndiceVariacionResultanteFinanciera = ponderacion * variacionFinanciera;
-                        dataGridView1.Rows.Add("Costo Financiero", PonderacionCostoFinanciero, ViejoCostoFinanciero, NuevoCostoFinanciero, variacionFinanciera, IndiceVariacionResultante);
+                        dataGridView1.Rows.Add("Costo Financiero", PonderacionCostoFinanciero, ViejoCostoFinanciero, NuevoCostoFinanciero, variacionFinanciera, IndiceVariacionResultanteFinanciera);
+                        total = total + IndiceVariacionResultanteFinanciera;
+                        total = total + IndiceVariacionResultante;
+                        PonderacionTotal = PonderacionTotal + PonderacionCostoFinanciero;
+                        PonderacionTotal = PonderacionTotal + ponderacion;
                     }
                 }
                 else if (rt.NumeroLinea == 40)
@@ -296,13 +308,18 @@ namespace TrabajoPDF_INDEC
                         double IndiceVariacionResultante;
                         IndiceVariacionResultante = ponderacion * variacion;
                         dataGridView1.Rows.Add("Equipo - Amortizacion de equipos", ponderacion, trozos[15], trozos[16], variacion, IndiceVariacionResultante);
-                    }else if (EleccionObra == 2 || EleccionObra == 5)
+                        total = total + IndiceVariacionResultante;
+                        PonderacionTotal = PonderacionTotal + ponderacion;
+                    }
+                    else if (EleccionObra == 2 || EleccionObra == 5)
                     {
                         double variacion = double.Parse(trozos[16]) / double.Parse(trozos[15]);
                         double ponderacion = 0.35;
                         double IndiceVariacionResultante;
                         IndiceVariacionResultante = ponderacion * variacion;
                         dataGridView1.Rows.Add("Equipo - Amortizacion de equipos", ponderacion, trozos[15], trozos[16], variacion, IndiceVariacionResultante);
+                        total = total + IndiceVariacionResultante;
+                        PonderacionTotal = PonderacionTotal + ponderacion;
                     }
                     else if(EleccionObra == 4)
                     {
@@ -311,6 +328,8 @@ namespace TrabajoPDF_INDEC
                         double IndiceVariacionResultante;
                         IndiceVariacionResultante = ponderacion * variacion;
                         dataGridView1.Rows.Add("Equipo - Amortizacion de equipos", ponderacion, trozos[15], trozos[16], variacion, IndiceVariacionResultante);
+                        total = total + IndiceVariacionResultante;
+                        PonderacionTotal = PonderacionTotal + ponderacion;
                     }
                 }
 
@@ -326,13 +345,18 @@ namespace TrabajoPDF_INDEC
                         double IndiceVariacionResultante;
                         IndiceVariacionResultante = ponderacion * variacion;
                         dataGridView1.Rows.Add("Mano de obra", ponderacion, trozos[15], trozos[16], variacion, IndiceVariacionResultante);
-                    }else if(EleccionObra == 2 || EleccionObra == 4 || EleccionObra == 5)
+                        total = total + IndiceVariacionResultante;
+                        PonderacionTotal = PonderacionTotal + ponderacion;
+                    }
+                    else if(EleccionObra == 2 || EleccionObra == 4 || EleccionObra == 5)
                     {
                         double variacion = double.Parse(trozos[16]) / double.Parse(trozos[15]);
                         double ponderacion = 0.20;
                         double IndiceVariacionResultante;
                         IndiceVariacionResultante = ponderacion * variacion;
                         dataGridView1.Rows.Add("Mano de obra", ponderacion, trozos[15], trozos[16], variacion, IndiceVariacionResultante);
+                        total = total + IndiceVariacionResultante;
+                        PonderacionTotal = PonderacionTotal + ponderacion;
                     }
                     else if(EleccionObra == 3)
                     {
@@ -341,6 +365,8 @@ namespace TrabajoPDF_INDEC
                         double IndiceVariacionResultante;
                         IndiceVariacionResultante = ponderacion * variacion;
                         dataGridView1.Rows.Add("Mano de obra", ponderacion, trozos[15], trozos[16], variacion, IndiceVariacionResultante);
+                        total = total + IndiceVariacionResultante;
+                        PonderacionTotal = PonderacionTotal + ponderacion;
                     }
 
                 }
@@ -353,13 +379,18 @@ namespace TrabajoPDF_INDEC
                         double IndiceVariacionResultante;
                         IndiceVariacionResultante = ponderacion * variacion;
                         dataGridView1.Rows.Add("Gastos Generales", ponderacion, trozos[15], trozos[16], variacion, IndiceVariacionResultante);
-                    }else if(EleccionObra == 4 || EleccionObra==5)
+                        total = total + IndiceVariacionResultante;
+                        PonderacionTotal = PonderacionTotal + ponderacion;
+                    }
+                    else if(EleccionObra == 4 || EleccionObra==5)
                     {
                         double variacion = double.Parse(trozos[16]) / double.Parse(trozos[15]);
                         double ponderacion = 0.15;
                         double IndiceVariacionResultante;
                         IndiceVariacionResultante = ponderacion * variacion;
                         dataGridView1.Rows.Add("Gastos Generales", ponderacion, trozos[15], trozos[16], variacion, IndiceVariacionResultante);
+                        total = total + IndiceVariacionResultante;
+                        PonderacionTotal = PonderacionTotal + ponderacion;
                     }
                 }
                 else if (rt.NumeroLinea == 45)
@@ -371,13 +402,18 @@ namespace TrabajoPDF_INDEC
                         double IndiceVariacionResultante;
                         IndiceVariacionResultante = ponderacion * variacion;
                         dataGridView1.Rows.Add("Hormigon", ponderacion, trozos[15], trozos[16], variacion, IndiceVariacionResultante);
-                    }else if (EleccionObra == 3)
+                        total = total + IndiceVariacionResultante;
+                        PonderacionTotal = PonderacionTotal + ponderacion;
+                    }
+                    else if (EleccionObra == 3)
                     {
                         double variacion = double.Parse(trozos[16]) / double.Parse(trozos[15]);
                         double ponderacion = 0.22;
                         double IndiceVariacionResultante;
                         IndiceVariacionResultante = ponderacion * variacion;
                         dataGridView1.Rows.Add("Hormigon", ponderacion, trozos[15], trozos[16], variacion, IndiceVariacionResultante);
+                        total = total + IndiceVariacionResultante;
+                        PonderacionTotal = PonderacionTotal + ponderacion;
                     }
                     else if(EleccionObra == 4)
                     {
@@ -386,6 +422,8 @@ namespace TrabajoPDF_INDEC
                         double IndiceVariacionResultante;
                         IndiceVariacionResultante = ponderacion * variacion;
                         dataGridView1.Rows.Add("Hormigon", ponderacion, trozos[15], trozos[16], variacion, IndiceVariacionResultante);
+                        total = total + IndiceVariacionResultante;
+                        PonderacionTotal = PonderacionTotal + ponderacion;
                     }
                 }
             }else if (cuadro == 3) //cuadro 4
@@ -405,13 +443,18 @@ namespace TrabajoPDF_INDEC
                         double IndiceVariacionResultante;
                         IndiceVariacionResultante = ponderacion * variacion;
                         dataGridView1.Rows.Add("Acero", ponderacion, numero1, numero2, variacion, IndiceVariacionResultante);
-                    }else if (EleccionObra == 3)
+                        total = total + IndiceVariacionResultante;
+                        PonderacionTotal = PonderacionTotal + ponderacion;
+                    }
+                    else if (EleccionObra == 3)
                     {
                         double variacion = double.Parse(numero2) / double.Parse(numero1);
                         double ponderacion = 0.13;
                         double IndiceVariacionResultante;
                         IndiceVariacionResultante = ponderacion * variacion;
                         dataGridView1.Rows.Add("Acero", ponderacion, numero1, numero2, variacion, IndiceVariacionResultante);
+                        total = total + IndiceVariacionResultante;
+                        PonderacionTotal = PonderacionTotal + ponderacion;
                     }
                 }
             }else if (cuadro == 4) //cuadro 3
@@ -424,7 +467,9 @@ namespace TrabajoPDF_INDEC
                         double ponderacion = 0.30;
                         double IndiceVariacionResultante;
                         IndiceVariacionResultante = ponderacion * variacion;
-                        dataGridView1.Rows.Add("Hierros y aceros en formas basicas", "", trozos[18], trozos[19], variacion, "");
+                        dataGridView1.Rows.Add("Hierros y aceros en formas basicas", ponderacion, trozos[18], trozos[19], variacion, IndiceVariacionResultante);
+                        total = total + IndiceVariacionResultante;
+                        PonderacionTotal = PonderacionTotal + ponderacion;
                     }
                 }
             }
@@ -600,6 +645,11 @@ namespace TrabajoPDF_INDEC
         private void radioButtonExcavacionCanal_CheckedChanged(object sender, EventArgs e)
         {
             EleccionObra = 2;
+        }
+
+        private void buttonTotal_Click(object sender, EventArgs e)
+        {
+            dataGridView1.Rows.Add("Total", PonderacionTotal, "", "", "", total);
         }
 
         private void radioButtonPresas_CheckedChanged(object sender, EventArgs e)
