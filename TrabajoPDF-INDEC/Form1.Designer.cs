@@ -50,6 +50,10 @@
             this.radioButtonDefensaCostera = new System.Windows.Forms.RadioButton();
             this.radioButtonDefensaPoblacion = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.maskedViejoCostoFinanciero = new System.Windows.Forms.MaskedTextBox();
+            this.maskedNuevoCostoFinanciero = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -156,18 +160,22 @@
             this.maskedTextBoxPrimeraPagina.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.maskedTextBoxPrimeraPagina.Location = new System.Drawing.Point(221, 135);
             this.maskedTextBoxPrimeraPagina.Margin = new System.Windows.Forms.Padding(2);
+            this.maskedTextBoxPrimeraPagina.Mask = "99999";
             this.maskedTextBoxPrimeraPagina.Name = "maskedTextBoxPrimeraPagina";
             this.maskedTextBoxPrimeraPagina.Size = new System.Drawing.Size(130, 23);
             this.maskedTextBoxPrimeraPagina.TabIndex = 12;
+            this.maskedTextBoxPrimeraPagina.ValidatingType = typeof(int);
             // 
             // maskedTextBoxUltimaPagina
             // 
             this.maskedTextBoxUltimaPagina.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.maskedTextBoxUltimaPagina.Location = new System.Drawing.Point(221, 183);
             this.maskedTextBoxUltimaPagina.Margin = new System.Windows.Forms.Padding(2);
+            this.maskedTextBoxUltimaPagina.Mask = "99999";
             this.maskedTextBoxUltimaPagina.Name = "maskedTextBoxUltimaPagina";
             this.maskedTextBoxUltimaPagina.Size = new System.Drawing.Size(130, 23);
             this.maskedTextBoxUltimaPagina.TabIndex = 13;
+            this.maskedTextBoxUltimaPagina.ValidatingType = typeof(int);
             // 
             // buttonPruebas
             // 
@@ -313,11 +321,53 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Obras";
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(26, 466);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(207, 40);
+            this.button1.TabIndex = 26;
+            this.button1.Text = "Costo financiero anterior";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(26, 512);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(207, 40);
+            this.button2.TabIndex = 27;
+            this.button2.Text = "Nuevo costo financiero";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // maskedViejoCostoFinanciero
+            // 
+            this.maskedViejoCostoFinanciero.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maskedViejoCostoFinanciero.Location = new System.Drawing.Point(251, 478);
+            this.maskedViejoCostoFinanciero.Name = "maskedViejoCostoFinanciero";
+            this.maskedViejoCostoFinanciero.Size = new System.Drawing.Size(100, 22);
+            this.maskedViejoCostoFinanciero.TabIndex = 28;
+            // 
+            // maskedNuevoCostoFinanciero
+            // 
+            this.maskedNuevoCostoFinanciero.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maskedNuevoCostoFinanciero.Location = new System.Drawing.Point(251, 522);
+            this.maskedNuevoCostoFinanciero.Name = "maskedNuevoCostoFinanciero";
+            this.maskedNuevoCostoFinanciero.Size = new System.Drawing.Size(100, 22);
+            this.maskedNuevoCostoFinanciero.TabIndex = 29;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1166, 580);
+            this.Controls.Add(this.maskedNuevoCostoFinanciero);
+            this.Controls.Add(this.maskedViejoCostoFinanciero);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.buttonExportarExcel);
             this.Controls.Add(this.dataGridView1);
@@ -371,6 +421,10 @@
         private System.Windows.Forms.RadioButton radioButtonDefensaCostera;
         private System.Windows.Forms.RadioButton radioButtonDefensaPoblacion;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.MaskedTextBox maskedViejoCostoFinanciero;
+        private System.Windows.Forms.MaskedTextBox maskedNuevoCostoFinanciero;
     }
 }
 

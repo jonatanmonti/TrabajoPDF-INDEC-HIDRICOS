@@ -25,7 +25,9 @@ namespace TrabajoPDF_INDEC
 
         public RutaTXT rt = new RutaTXT(); //objeto de la clase RutaTXT
 
-        int contador = 0; int cuadro = 0; int EleccionObra;
+        int contador = 0, cuadro = 0, EleccionObra;
+
+        double ViejoCostoFinanciero, NuevoCostoFinanciero, PonderacionCostoFinanciero = 0.03;
 
         string numero1 = "", numero2 = "";
 
@@ -256,15 +258,22 @@ namespace TrabajoPDF_INDEC
                         double IndiceVariacionResultante;
                         IndiceVariacionResultante = ponderacion * variacion;
                         dataGridView1.Rows.Add("asfaltos, combustibles y lubricantes", ponderacion, trozos[18], trozos[19], variacion, IndiceVariacionResultante);
-                        
-                    }else if(EleccionObra == 2 || EleccionObra == 5)
+                        double variacionFinanciera = NuevoCostoFinanciero / ViejoCostoFinanciero;
+                        double IndiceVariacionResultanteFinanciera = ponderacion * variacionFinanciera;
+                        dataGridView1.Rows.Add("Costo Financiero", PonderacionCostoFinanciero, ViejoCostoFinanciero, NuevoCostoFinanciero, variacion, IndiceVariacionResultante);
+
+                    }
+                    else if(EleccionObra == 2 || EleccionObra == 5)
                     {
                         double variacion = double.Parse(trozos[19]) / double.Parse(trozos[18]);
                         double ponderacion = 0.34;
                         double IndiceVariacionResultante;
                         IndiceVariacionResultante = ponderacion * variacion;
                         dataGridView1.Rows.Add("asfaltos, combustibles y lubricantes", ponderacion, trozos[18], trozos[19], variacion, IndiceVariacionResultante);
-                        
+                        double variacionFinanciera = NuevoCostoFinanciero / ViejoCostoFinanciero;
+                        double IndiceVariacionResultanteFinanciera = ponderacion * variacionFinanciera;
+                        dataGridView1.Rows.Add("Costo Financiero", PonderacionCostoFinanciero, ViejoCostoFinanciero, NuevoCostoFinanciero, variacion, IndiceVariacionResultante);
+
                     }
                     else if (EleccionObra == 4)
                     {
@@ -273,6 +282,9 @@ namespace TrabajoPDF_INDEC
                         double IndiceVariacionResultante;
                         IndiceVariacionResultante = ponderacion * variacion;
                         dataGridView1.Rows.Add("asfaltos, combustibles y lubricantes", ponderacion, trozos[18], trozos[19], variacion, IndiceVariacionResultante);
+                        double variacionFinanciera = NuevoCostoFinanciero / ViejoCostoFinanciero;
+                        double IndiceVariacionResultanteFinanciera = ponderacion * variacionFinanciera;
+                        dataGridView1.Rows.Add("Costo Financiero", PonderacionCostoFinanciero, ViejoCostoFinanciero, NuevoCostoFinanciero, variacion, IndiceVariacionResultante);
                     }
                 }
                 else if (rt.NumeroLinea == 40)
@@ -595,6 +607,11 @@ namespace TrabajoPDF_INDEC
             EleccionObra = 3;
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            NuevoCostoFinanciero = double.Parse(maskedNuevoCostoFinanciero.Text);
+        }
+
         private void radioButtonDefensaCostera_CheckedChanged(object sender, EventArgs e)
         {
             EleccionObra = 4;
@@ -603,6 +620,11 @@ namespace TrabajoPDF_INDEC
         private void radioButtonDefensaPoblacion_CheckedChanged(object sender, EventArgs e)
         {
             EleccionObra = 5;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ViejoCostoFinanciero = double.Parse(maskedViejoCostoFinanciero.Text);
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
