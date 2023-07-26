@@ -221,7 +221,7 @@ namespace TrabajoPDF_INDEC
             }
 
         }
-        
+
         private void Parsear() //funcion para parsear los archivos de texto
         {
             string[] trozos = rt.Linea.Split(' '); //asignamos que el separador es el espacio vacio
@@ -258,10 +258,7 @@ namespace TrabajoPDF_INDEC
                         double IndiceVariacionResultante;
                         IndiceVariacionResultante = ponderacion * variacion;
                         dataGridView1.Rows.Add("asfaltos, combustibles y lubricantes", ponderacion, trozos[18], trozos[19], variacion, IndiceVariacionResultante);
-                        double variacionFinanciera = NuevoCostoFinanciero / ViejoCostoFinanciero;
-                        double IndiceVariacionResultanteFinanciera = ponderacion * variacionFinanciera;
-                        dataGridView1.Rows.Add("Costo Financiero", PonderacionCostoFinanciero, ViejoCostoFinanciero, NuevoCostoFinanciero, variacionFinanciera, IndiceVariacionResultanteFinanciera);
-                        total = total + IndiceVariacionResultanteFinanciera;
+                        
                         total = total + IndiceVariacionResultante;
                         PonderacionTotal = PonderacionTotal + PonderacionCostoFinanciero;
                         PonderacionTotal = PonderacionTotal + ponderacion;
@@ -479,6 +476,12 @@ namespace TrabajoPDF_INDEC
         private void buttonPruebas_Click(object sender, EventArgs e)
         {
             
+            radioButtonDesaguesPluviales.Enabled = false;
+            radioButtonExcavacionCanal.Enabled = false;
+            radioButtonPresas.Enabled = false;
+            radioButtonDefensaCostera.Enabled = false;
+            radioButtonDefensaPoblacion.Enabled = false;
+
             StreamReader LeerLineas = File.OpenText(textBoxRutaTXT.Text);
 
             if (cuadro == 1) //if para validar en que cuadro estamos \\cuadro 1
@@ -660,6 +663,7 @@ namespace TrabajoPDF_INDEC
         private void button2_Click(object sender, EventArgs e)
         {
             NuevoCostoFinanciero = double.Parse(maskedNuevoCostoFinanciero.Text);
+            button2.Enabled = false;
         }
 
         private void radioButtonDefensaCostera_CheckedChanged(object sender, EventArgs e)
@@ -675,6 +679,7 @@ namespace TrabajoPDF_INDEC
         private void button1_Click(object sender, EventArgs e)
         {
             ViejoCostoFinanciero = double.Parse(maskedViejoCostoFinanciero.Text);
+            button1.Enabled = false;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
