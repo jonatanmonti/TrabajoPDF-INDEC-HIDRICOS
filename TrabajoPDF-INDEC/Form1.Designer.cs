@@ -55,6 +55,7 @@
             this.maskedViejoCostoFinanciero = new System.Windows.Forms.MaskedTextBox();
             this.maskedNuevoCostoFinanciero = new System.Windows.Forms.MaskedTextBox();
             this.buttonTotal = new System.Windows.Forms.Button();
+            this.labelCredito = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -63,7 +64,7 @@
             // 
             this.labelTitulo.AutoSize = true;
             this.labelTitulo.Font = new System.Drawing.Font("MV Boli", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTitulo.Location = new System.Drawing.Point(164, 7);
+            this.labelTitulo.Location = new System.Drawing.Point(156, 9);
             this.labelTitulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelTitulo.Name = "labelTitulo";
             this.labelTitulo.Size = new System.Drawing.Size(277, 29);
@@ -371,11 +372,23 @@
             this.buttonTotal.UseVisualStyleBackColor = true;
             this.buttonTotal.Click += new System.EventHandler(this.buttonTotal_Click);
             // 
+            // labelCredito
+            // 
+            this.labelCredito.AutoSize = true;
+            this.labelCredito.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCredito.Location = new System.Drawing.Point(715, 552);
+            this.labelCredito.Name = "labelCredito";
+            this.labelCredito.Size = new System.Drawing.Size(439, 19);
+            this.labelCredito.TabIndex = 31;
+            this.labelCredito.Text = "Creado por: Jonatan Daniel Monti; Email: jonatan.monti@hotmail.com;";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1166, 580);
+            this.Controls.Add(this.labelCredito);
             this.Controls.Add(this.buttonTotal);
             this.Controls.Add(this.maskedNuevoCostoFinanciero);
             this.Controls.Add(this.maskedViejoCostoFinanciero);
@@ -439,6 +452,7 @@
         private System.Windows.Forms.MaskedTextBox maskedViejoCostoFinanciero;
         private System.Windows.Forms.MaskedTextBox maskedNuevoCostoFinanciero;
         private System.Windows.Forms.Button buttonTotal;
+        private System.Windows.Forms.Label labelCredito;
     }
 }
 
