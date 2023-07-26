@@ -653,6 +653,7 @@ namespace TrabajoPDF_INDEC
         private void buttonTotal_Click(object sender, EventArgs e)
         {
             dataGridView1.Rows.Add("Total", PonderacionTotal, "", "", "", total);
+            buttonExportarExcel.Enabled = true;
         }
 
         private void radioButtonPresas_CheckedChanged(object sender, EventArgs e)

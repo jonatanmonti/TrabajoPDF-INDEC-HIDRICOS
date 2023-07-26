@@ -239,6 +239,7 @@
             // 
             // buttonExportarExcel
             // 
+            this.buttonExportarExcel.Enabled = false;
             this.buttonExportarExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonExportarExcel.Location = new System.Drawing.Point(572, 338);
             this.buttonExportarExcel.Margin = new System.Windows.Forms.Padding(2);
