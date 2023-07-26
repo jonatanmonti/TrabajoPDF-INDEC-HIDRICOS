@@ -64,12 +64,12 @@
             // 
             this.labelTitulo.AutoSize = true;
             this.labelTitulo.Font = new System.Drawing.Font("MV Boli", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTitulo.Location = new System.Drawing.Point(156, 9);
+            this.labelTitulo.Location = new System.Drawing.Point(325, 8);
             this.labelTitulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelTitulo.Name = "labelTitulo";
-            this.labelTitulo.Size = new System.Drawing.Size(277, 29);
+            this.labelTitulo.Size = new System.Drawing.Size(509, 29);
             this.labelTitulo.TabIndex = 4;
-            this.labelTitulo.Text = "Extractor Datos INDEC";
+            this.labelTitulo.Text = "Calculo en la Variación de Obras Hidráulicas";
             this.labelTitulo.UseWaitCursor = true;
             // 
             // labelRutaPdf
@@ -414,7 +414,7 @@
             this.Controls.Add(this.labelTitulo);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Calculo en la Variación de Obras Hidráulicas";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
