@@ -38,6 +38,7 @@ namespace TrabajoPDF_INDEC
         public Form1()
         {
             InitializeComponent();
+            radioButtonDesaguesPluviales.Checked = true;
         }
 
         private void Form1_Load(object sender, EventArgs e)
