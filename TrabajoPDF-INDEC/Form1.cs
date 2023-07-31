@@ -228,12 +228,12 @@ namespace TrabajoPDF_INDEC
             string[] trozos = rt.Linea.Split(' '); //asignamos que el separador es el espacio vacio
             trozos = trozos.ToList().Where(x => !string.IsNullOrEmpty(x)).ToArray(); //esto sirve para indicar que todo espacio vacio extra no nos moleste
             int i = 0;
-            Debug.WriteLine(rt.Linea);
+            Debug.WriteLine(rt.Linea); //aca esbrico en el debug cada linea del archivo de texto
             dataGridView1.AllowUserToAddRows = false;
             
             while (i < trozos.Length)
             {
-                Debug.WriteLine("[" + trozos[i] + "]");
+                Debug.WriteLine("[" + trozos[i] + "]"); //aca escribo en el debug como se ve parseado mostrando las separaciones con corchetes
                 i++;
             }
 
@@ -242,13 +242,13 @@ namespace TrabajoPDF_INDEC
 
                 if (rt.NumeroLinea == 13)
                 {
-                    dataGridView1.ColumnCount = 6;
-                    dataGridView1.Columns[0].HeaderText = "Insumos";
-                    dataGridView1.Columns[1].HeaderText = "ponderacion";
-                    dataGridView1.Columns[2].HeaderText = trozos[12];
-                    dataGridView1.Columns[3].HeaderText = trozos[13];
-                    dataGridView1.Columns[4].HeaderText = "variacion";
-                    dataGridView1.Columns[5].HeaderText = "indice de variacion resultante";
+                    dataGridView1.ColumnCount = 6; //asigno el numero de columnas
+                    dataGridView1.Columns[0].HeaderText = "Insumos"; //agrego titulo a la columna 0
+                    dataGridView1.Columns[1].HeaderText = "ponderacion"; //agrego titulo a la columna 1
+                    dataGridView1.Columns[2].HeaderText = trozos[12]; //aca se agrega en la columna 2 el mes anterior
+                    dataGridView1.Columns[3].HeaderText = trozos[13]; //aca se agrega en la columna 3 el mes actual
+                    dataGridView1.Columns[4].HeaderText = "variacion"; //agrego titulo a la columna 4
+                    dataGridView1.Columns[5].HeaderText = "indice de variacion resultante"; //agrego titulo a la columna 5
                 }
                 else if(rt.NumeroLinea == 27)
                 {
@@ -623,7 +623,7 @@ namespace TrabajoPDF_INDEC
             buttonPruebas.Enabled=true;
         }
 
-        private void buttonExportarExcel_Click(object sender, EventArgs e)
+        private void buttonExportarExcel_Click(object sender, EventArgs e) //boton para exportar los datos del datagridview al excel
         {
             objExcel.Application application = new objExcel.Application();
             Workbook objLibro = application.Workbooks.Add(XlSheetType.xlWorksheet);
