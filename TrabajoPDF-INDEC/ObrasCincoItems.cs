@@ -5,10 +5,10 @@ using System.Text;
 
 namespace TrabajoPDF_INDEC
 {
-    public class ObraCincoItem
+    public class ObraCincoItem //esta clase contiene los 5 items
     {
 
-		private float manoDeObra;
+		private float manoDeObra; //item Mano de Obra
 
 		public float ManoDeObra
 		{
@@ -16,15 +16,15 @@ namespace TrabajoPDF_INDEC
 			set { manoDeObra = value; }
 		}
 
-		private float equipo;
+		private float equipo; //item Equipo
 
-		public float Equipo
+        public float Equipo
 		{
 			get { return equipo; }
 			set { equipo = value; }
 		}
 
-		private float asfaltosCombustibleLubricante;
+		private float asfaltosCombustibleLubricante; //Item Astaltos, combustibles y lubricantes
 
 		public float AsfaltoCombustibleLubricante
 		{
@@ -32,7 +32,7 @@ namespace TrabajoPDF_INDEC
 			set { asfaltosCombustibleLubricante = value; }
 		}
 
-		private float gastoGeneral;
+		private float gastoGeneral; //Item Gasto general
 
 		public float GastoGeneral
 		{
@@ -40,7 +40,7 @@ namespace TrabajoPDF_INDEC
 			set { gastoGeneral = value; }
 		}
 
-		private float costoFinanciero;
+		private float costoFinanciero; //Item Costo Financiero
 
 		public float CostoFinanciero
 		{
@@ -48,7 +48,7 @@ namespace TrabajoPDF_INDEC
 			set { costoFinanciero = value; }
 		}
 
-		private float total;
+		private float total; //Item Total
 
 		public float Total
 		{
