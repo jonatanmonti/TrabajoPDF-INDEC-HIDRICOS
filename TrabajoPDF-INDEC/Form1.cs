@@ -259,7 +259,12 @@ namespace TrabajoPDF_INDEC
                         double IndiceVariacionResultante;
                         IndiceVariacionResultante = ponderacion * variacion;
                         dataGridView1.Rows.Add("asfaltos, combustibles y lubricantes", ponderacion, trozos[18], trozos[19], variacion, IndiceVariacionResultante);
-                        
+
+                        double variacionFinanciera = NuevoCostoFinanciero / ViejoCostoFinanciero;
+                        double IndiceVariacionResultanteFinanciera = ponderacion * variacionFinanciera;
+                        dataGridView1.Rows.Add("Costo Financiero", PonderacionCostoFinanciero, ViejoCostoFinanciero, NuevoCostoFinanciero, variacionFinanciera, IndiceVariacionResultanteFinanciera);
+                        total = total + IndiceVariacionResultanteFinanciera;
+
                         total = total + IndiceVariacionResultante;
                         PonderacionTotal = PonderacionTotal + PonderacionCostoFinanciero;
                         PonderacionTotal = PonderacionTotal + ponderacion;
@@ -334,7 +339,7 @@ namespace TrabajoPDF_INDEC
             }
             else if(cuadro == 2) //cuadro 5
             {
-                if (rt.NumeroLinea == 16)
+                if (rt.NumeroLinea == 17)
                 {
                     if (EleccionObra == 1)
                     {
@@ -368,7 +373,7 @@ namespace TrabajoPDF_INDEC
                     }
 
                 }
-                else if (rt.NumeroLinea == 39)
+                else if (rt.NumeroLinea == 40)
                 {
                     if (EleccionObra == 1 || EleccionObra == 2 || EleccionObra == 3)
                     {
@@ -391,7 +396,7 @@ namespace TrabajoPDF_INDEC
                         PonderacionTotal = PonderacionTotal + ponderacion;
                     }
                 }
-                else if (rt.NumeroLinea == 45)
+                else if (rt.NumeroLinea == 46)
                 {
                     if (EleccionObra == 1)
                     {
@@ -533,7 +538,7 @@ namespace TrabajoPDF_INDEC
                 {
                     rt.Linea = LeerLineas.ReadLine();
                     
-                    if (++rt.NumeroLinea == 16) //if para obtener la linea especifica dentro del archivo de texto
+                    if (++rt.NumeroLinea == 17) //if para obtener la linea especifica dentro del archivo de texto
                     {
                         Parsear(); //funcion para parsear los archivos de texto
 
@@ -545,7 +550,7 @@ namespace TrabajoPDF_INDEC
                 {
                     rt.Linea = LeerLineas.ReadLine();
                     
-                    if (++rt.NumeroLinea == 39) //if para obtener la linea especifica dentro del archivo de texto
+                    if (++rt.NumeroLinea == 40) //if para obtener la linea especifica dentro del archivo de texto
                     {
                         Parsear(); //funcion para parsear los archivos de texto
 
@@ -557,7 +562,7 @@ namespace TrabajoPDF_INDEC
                 {
                     rt.Linea = LeerLineas.ReadLine();
                     
-                    if (++rt.NumeroLinea == 45) //if para obtener la linea especifica dentro del archivo de texto
+                    if (++rt.NumeroLinea == 46) //if para obtener la linea especifica dentro del archivo de texto
                     {
                         Parsear(); //funcion para parsear los archivos de texto
 
